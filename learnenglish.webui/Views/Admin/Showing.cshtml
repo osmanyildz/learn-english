@@ -1,0 +1,20 @@
+@model ShowModel
+
+
+
+@{
+    // Model içinde gelen HTML içeriği
+    string gelenHtml = Model.contents;
+}
+
+<div class="container">
+
+
+    @Html.Raw(gelenHtml)
+
+</div>
+
+
+
+
+

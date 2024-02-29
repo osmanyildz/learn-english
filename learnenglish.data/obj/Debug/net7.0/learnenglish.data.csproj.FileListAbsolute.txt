@@ -1,0 +1,12 @@
+/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/bin/Debug/net7.0/learnenglish.data.deps.json
+/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/bin/Debug/net7.0/learnenglish.data.dll
+/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/bin/Debug/net7.0/learnenglish.data.pdb
+/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/obj/Debug/net7.0/learnenglish.data.csproj.AssemblyReference.cache
+/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/obj/Debug/net7.0/learnenglish.data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/obj/Debug/net7.0/learnenglish.data.AssemblyInfoInputs.cache
+/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/obj/Debug/net7.0/learnenglish.data.AssemblyInfo.cs
+/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/obj/Debug/net7.0/learnenglish.data.csproj.CoreCompileInputs.cache
+/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/obj/Debug/net7.0/learnenglish.data.dll
+/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/obj/Debug/net7.0/refint/learnenglish.data.dll
+/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/obj/Debug/net7.0/learnenglish.data.pdb
+/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/obj/Debug/net7.0/ref/learnenglish.data.dll

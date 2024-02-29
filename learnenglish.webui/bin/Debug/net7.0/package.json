@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@ckeditor/ckeditor5-image": "^41.1.0",
+    "froala-editor": "^4.1.4"
+  }
+}

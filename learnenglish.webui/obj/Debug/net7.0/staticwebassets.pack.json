@@ -1,0 +1,73 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/wwwroot/css/style.css",
+      "PackagePath": "staticwebassets/css/style.css"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/wwwroot/img/.DS_Store",
+      "PackagePath": "staticwebassets/img/.DS_Store"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/wwwroot/img/books.png",
+      "PackagePath": "staticwebassets/img/books.png"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/wwwroot/img/home.jpg",
+      "PackagePath": "staticwebassets/img/home.jpg"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/wwwroot/img/logo1.jpg",
+      "PackagePath": "staticwebassets/img/logo1.jpg"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/wwwroot/img/logo2.jpg",
+      "PackagePath": "staticwebassets/img/logo2.jpg"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/wwwroot/img/logo3.png",
+      "PackagePath": "staticwebassets/img/logo3.png"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/wwwroot/img/quiz.jpg",
+      "PackagePath": "staticwebassets/img/quiz.jpg"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/wwwroot/img/saat.jpg",
+      "PackagePath": "staticwebassets/img/saat.jpg"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/wwwroot/img/usman.png",
+      "PackagePath": "staticwebassets/img/usman.png"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/wwwroot/img/work.jpg",
+      "PackagePath": "staticwebassets/img/work.jpg"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/wwwroot/img/work2.jpg",
+      "PackagePath": "staticwebassets/img/work2.jpg"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.learnenglish.webui.props",
+      "PackagePath": "build\\learnenglish.webui.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.learnenglish.webui.props",
+      "PackagePath": "buildMultiTargeting\\learnenglish.webui.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.learnenglish.webui.props",
+      "PackagePath": "buildTransitive\\learnenglish.webui.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.learnenglish.webui.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
