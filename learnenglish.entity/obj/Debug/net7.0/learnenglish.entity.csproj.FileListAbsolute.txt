@@ -3,3 +3,15 @@
 /Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.entity/obj/Debug/net7.0/learnenglish.entity.AssemblyInfoInputs.cache
 /Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.entity/obj/Debug/net7.0/learnenglish.entity.AssemblyInfo.cs
 /Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.entity/obj/Debug/net7.0/learnenglish.entity.csproj.CoreCompileInputs.cache
+/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/bin/Debug/net7.0/learnenglish.entity.deps.json
+/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/bin/Debug/net7.0/learnenglish.entity.dll
+/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/bin/Debug/net7.0/learnenglish.entity.pdb
+/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/obj/Debug/net7.0/learnenglish.entity.csproj.AssemblyReference.cache
+/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/obj/Debug/net7.0/learnenglish.entity.GeneratedMSBuildEditorConfig.editorconfig
+/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/obj/Debug/net7.0/learnenglish.entity.AssemblyInfoInputs.cache
+/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/obj/Debug/net7.0/learnenglish.entity.AssemblyInfo.cs
+/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/obj/Debug/net7.0/learnenglish.entity.csproj.CoreCompileInputs.cache
+/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/obj/Debug/net7.0/learnenglish.entity.dll
+/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/obj/Debug/net7.0/refint/learnenglish.entity.dll
+/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/obj/Debug/net7.0/learnenglish.entity.pdb
+/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/obj/Debug/net7.0/ref/learnenglish.entity.dll

@@ -9,5 +9,8 @@ namespace learnenglish.entity
     {
         public int Id { get; set; }
         public string QuizContent { get; set; }
+        public List<Answer> Answers { get; set; }
+        public int LevelId { get; set; }
+        public Level Level { get; set; }
     }
 }

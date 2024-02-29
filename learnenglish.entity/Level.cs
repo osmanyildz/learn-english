@@ -11,5 +11,7 @@ namespace learnenglish.entity
         public int Id { get; set; }
         public string LevelName { get; set; }
         public List<Lesson> Lessons { get; set; } // nav prop
+        public List<Quiz> Quizzes { get; set; }
+
     }
 }

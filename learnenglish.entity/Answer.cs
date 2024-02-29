@@ -9,6 +9,7 @@ namespace learnenglish.entity
     {
         public int Id { get; set; }
         public string option { get; set; }
-        
+        public Quiz Quiz { get; set; }
+        public int QuizId { get; set; }
     }
 }

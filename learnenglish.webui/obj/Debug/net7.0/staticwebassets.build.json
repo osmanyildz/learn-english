@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SQua64PSh9crOQrYeL3NoUa501dQUXjigNZcOsb2S14=",
+  "Hash": "hKATTMNHjIiV6AoWI1CO64s2kNn8gRzENk8xcmZSya0=",
   "Source": "learnenglish.webui",
   "BasePath": "_content/learnenglish.webui",
   "Mode": "Default",
@@ -153,6 +153,23 @@
       "OriginalItemSpec": "wwwroot/img/logo3.png"
     },
     {
+      "Identity": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/phone.jpg",
+      "SourceId": "learnenglish.webui",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/",
+      "BasePath": "_content/learnenglish.webui",
+      "RelativePath": "img/phone.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/phone.jpg"
+    },
+    {
       "Identity": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/quiz.jpg",
       "SourceId": "learnenglish.webui",
       "SourceType": "Discovered",
@@ -185,23 +202,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/img/saat.jpg"
-    },
-    {
-      "Identity": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/usman.png",
-      "SourceId": "learnenglish.webui",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/",
-      "BasePath": "_content/learnenglish.webui",
-      "RelativePath": "img/usman.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/img/usman.png"
     },
     {
       "Identity": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/work.jpg",

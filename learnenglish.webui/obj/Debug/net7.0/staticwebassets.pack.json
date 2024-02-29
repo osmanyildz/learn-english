@@ -33,16 +33,16 @@
       "PackagePath": "staticwebassets/img/logo3.png"
     },
     {
+      "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/phone.jpg",
+      "PackagePath": "staticwebassets/img/phone.jpg"
+    },
+    {
       "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/quiz.jpg",
       "PackagePath": "staticwebassets/img/quiz.jpg"
     },
     {
       "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/saat.jpg",
       "PackagePath": "staticwebassets/img/saat.jpg"
-    },
-    {
-      "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/usman.png",
-      "PackagePath": "staticwebassets/img/usman.png"
     },
     {
       "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/work.jpg",
