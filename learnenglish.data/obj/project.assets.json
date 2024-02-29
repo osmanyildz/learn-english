@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/learnenglish.data.csproj",
+      "projectUniqueName": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.data/learnenglish.data.csproj",
       "projectName": "learnenglish.data",
-      "projectPath": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/learnenglish.data.csproj",
+      "projectPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.data/learnenglish.data.csproj",
       "packagesPath": "/Users/osmanyildiz/.nuget/packages/",
-      "outputPath": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.data/obj/",
+      "outputPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.data/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/osmanyildiz/.nuget/NuGet/NuGet.Config"

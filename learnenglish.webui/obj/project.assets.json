@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/learnenglish.webui.csproj",
+      "projectUniqueName": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/learnenglish.webui.csproj",
       "projectName": "learnenglish.webui",
-      "projectPath": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/learnenglish.webui.csproj",
+      "projectPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/learnenglish.webui.csproj",
       "packagesPath": "/Users/osmanyildiz/.nuget/packages/",
-      "outputPath": "/Users/osmanyildiz/Desktop/Okul_Projesi_3/learnenglish.webui/obj/",
+      "outputPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/osmanyildiz/.nuget/NuGet/NuGet.Config"
