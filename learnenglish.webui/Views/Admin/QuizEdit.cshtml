@@ -1,0 +1,111 @@
+@model QuizEditModel
+ <div class="container mb-5">
+    <div class="row">
+        <div class="col-9">
+            <div class="card">
+
+                <div class="card-header">
+                    <h4 class="p-2">Soru Güncelleme Formu</h4>
+                </div>
+
+                <div class="card-body py-0">
+                    <form action="/Admin/QuizEdit" method="post">
+                    <input type="hidden" name="Id" value="@Model.Id">
+                    <input type="hidden" name="AId" value="@Model.Answers.ElementAt(0)">
+                        <div class="row mb-5">
+                            <div class="col-7">
+
+                                <label for="question" class="form-label">Soru</label>
+                                <textarea name="Question" id="question" cols="5" rows="4"
+                                    class="form-control">@Model.Question</textarea>
+                                    
+                              <div class="d-flex mt-4">
+                                    <input type="radio" name="IsCorrect" value="@Model.Answers.ElementAt(0).Id" id="ans1" class="form-check-input me-2 mt-" @(Model.Answers.ElementAt(0).IsCorrect==1 ? "checked": "")>
+                                    <label for="ans1" class="form-label me-2">A</label>
+                                    <input type="text" name="a" id="ans1_input" value="@Model.Answers.ElementAt(0).Answer" class="form-control">
+                                </div>
+                                      <div class="d-flex mt-4">
+                                    <input type="radio" name="IsCorrect" value="@Model.Answers.ElementAt(1).Id" id="ans2" class="form-check-input me-2 mt-" @(Model.Answers.ElementAt(1).IsCorrect==1 ? "checked": "")>
+                                    <label for="ans2" class="form-label me-2">B</label>
+
+                                    <input type="text" name="b" id="ans2_input" value="@Model.Answers.ElementAt(1).Answer" class="form-control">
+                                </div>
+
+                                 <div class="d-flex mt-4">
+                                    <input type="radio" name="IsCorrect" value="@Model.Answers.ElementAt(2).Id"  id="ans3" class="form-check-input me-2"
+                                       @(Model.Answers.ElementAt(2).IsCorrect==1 ? "checked": "") >
+                                    <label for="ans3" class="form-label me-2">C</label>
+                                    <input type="text" name="c" id="ans3_input" class="form-control" value="@Model.Answers.ElementAt(2).Answer">
+                                </div>
+                                
+
+                                <div class="d-flex mt-4">
+                                    <input type="radio" name="IsCorrect"  value="@Model.Answers.ElementAt(3).Id" id="ans4" class="form-check-input me-2"
+                                      @(Model.Answers.ElementAt(3).IsCorrect==1 ? "checked": "") >
+                                    <label for="ans4" class="form-label me-2">D</label>
+                                    <input type="text" name="d" id="ans4_input" class="form-control" value="@Model.Answers.ElementAt(3).Answer">
+                                </div>
+                                
+                                 
+                                    
+                             @* <button type="submit" class="btn btn-primary mt-4 ms-3">Kaydet</button>  *@
+
+
+                            </div>
+
+                            <div class="col-3 ms-5">
+                                <div class="card p-2">
+                                    <div class="card-body">
+                                        <h5 class="mb-3">Soru Seviyesi</h4>
+                                          
+                                            <div>
+                                                <input type="radio" name="levelId" id="level2" class="form-check-input"
+                                                    value="2" @(ViewBag.LevelId == 2 ? "checked":"" )>
+                                                <label for="level2" class="form-label me-2">A1 Seviyesi</label>
+                                            </div>
+
+                                            <div>
+                                                <input type="radio" name="levelId" id="level3" class="form-check-input "
+                                                    value="3" @(ViewBag.LevelId == 3 ? "checked":"") >
+                                                <label for="level3" class="form-label me-2">A2 Seviyesi</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="levelId" id="level4" class="form-check-input "
+                                                    value="4" @(ViewBag.LevelId == 4 ? "checked":"") >
+                                                <label for="level4" class="form-label me-2">B1 Seviyesi</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="levelId" id="level5" class="form-check-input "
+                                                    value="5" @(ViewBag.LevelId == 5 ? "checked":"") >
+                                                <label for="level5" class="form-label me-2">B2 Seviyesi</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="levelId" id="level6" class="form-check-input "
+                                                    value="6" @(ViewBag.LevelId == 6 ? "checked":"") >
+                                                <label for="level6" class="form-label me-2">C1 Seviyesi</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="levelId" id="level7" class="form-check-input "
+                                                    value="7" @(ViewBag.LevelId == 7 ? "checked":"") >
+                                                <label for="level7" class="form-label me-2">C2 Seviyesi</label>
+                                            </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 me-0">
+                            <button type="submit" class="btn btn-primary ms-4">Soruyu Güncelle</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div> 
+

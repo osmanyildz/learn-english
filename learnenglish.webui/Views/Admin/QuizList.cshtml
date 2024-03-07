@@ -1,0 +1,47 @@
+
+
+@model List<QuizListModel>
+<div class="container my-5 p-0">
+  <table id="myTable" class="table table-hover align-middle" cellspacing="0" width="100%">
+
+    <thead>
+      <tr>
+        <th class="th-sm">Soru
+        </th>
+        <th class="th-sm">Seviye
+        </th>
+        <th class="th-sm">Düzenle
+        </th>
+        <th class="th-sm">Sil
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+       @foreach(var item in Model){
+      <tr>
+      <td style="max-width: 10px;">
+        @item.Question 
+      </td>
+      <td>
+        @item.LevelName
+      </td>
+      <td>
+        <a href="/Admin/QuizEdit/@item.Id" class="btn btn-primary btn-sm">Düzenle <i
+            class="fa-solid fa-pen-to-square p-"></i></a>
+      </td>
+      <td>
+        <form action="/Admin/QuizDelete/@item.Id" method="post">
+        <button type="submit" class="btn btn-danger btn-sm">Sil <i class="fa-solid fa-trash"></i></button>
+        @* <a href="/Admin/QuizDelete/@item.Id" class="btn btn-danger btn-sm">Sil <i class="fa-solid fa-trash"></i></a> *@
+        </form>
+      </td>
+      </tr>
+      } 
+  
+
+    </tbody>
+
+
+  </table>
+</div>

@@ -164,6 +164,20 @@
 .features__right h3 {
     font-size: 30px;
 }
+
 #main-body{
     min-height: calc(100vh - 250px);
 }
+
+.scrollable-div {
+    max-height: 700px; /* İsteğe bağlı: maksimum yüksekliği belirleyin */
+    overflow-y: scroll; /* Dikey kaydırma */
+    /* overflow-x: scroll; */ /* Yatay kaydırma */
+}
+
+.table td {
+    max-width: 300px; /* Metnin maksimum genişliğini ayarlayın */
+    white-space: nowrap; /* Metni bir satırda tutun */
+    overflow: hidden; /* Taşan içeriği gizleyin */
+    text-overflow: ellipsis; /* Taşan içeriği üç nokta (...) ile gösterin */
+  }

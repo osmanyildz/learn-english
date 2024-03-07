@@ -1,3 +1,4 @@
+@model QuizCreateModel
 <div class="container mb-5">
     <div class="row">
         <div class="col-9">
@@ -12,35 +13,35 @@
                         <div class="row mb-5">
                             <div class="col-7">
 
-                                <label for="Question" class="form-label">Soru</label>
-                                <textarea name="question" id="Question" cols="5" rows="4"
+                                <label for="question" class="form-label">Soru</label>
+                                <textarea name="Question" id="question" cols="5" rows="4"
                                     class="form-control"></textarea>
+                                    
                               <div class="d-flex mt-4">
-                                    <input type="radio" name="isCorrect" id="ans1" class="form-check-input me-2"
-                                        value="2">
+                                    <input type="radio" name="trueOptionId" value="1" id="ans1" class="form-check-input me-2">
                                     <label for="ans1" class="form-label me-2">A</label>
-                                    <input type="text" name="ans1" id="ans1_input" class="form-control">
+                                    <input type="text" name="option1" id="ans1_input" class="form-control">
                                 </div>
 
                                 <div class="d-flex mt-4">
-                                    <input type="radio" name="isCorrect" id="ans2" class="form-check-input me-2"
-                                        value="2">
+                                    <input type="radio" name="trueOptionId" value="2"  id="ans2" class="form-check-input me-2"
+                                        >
                                     <label for="ans2" class="form-label me-2">B</label>
-                                    <input type="text" name="ans2" id="ans2_input" class="form-control">
+                                    <input type="text" name="option2" id="ans2_input" class="form-control">
                                 </div>
 
                                 <div class="d-flex mt-4">
-                                    <input type="radio" name="isCorrect" id="ans3" class="form-check-input me-2"
-                                        value="3">
+                                    <input type="radio" name="trueOptionId"  value="3" id="ans3" class="form-check-input me-2"
+                                       >
                                     <label for="ans3" class="form-label me-2">C</label>
-                                    <input type="text" name="ans3" id="ans3_input" class="form-control">
+                                    <input type="text" name="option3" id="ans3_input" class="form-control">
                                 </div>
 
                                 <div class="d-flex mt-4">
-                                    <input type="radio" name="isCorrect" id="ans4" class="form-check-input me-2"
-                                        value="4">
+                                    <input type="radio" name="trueOptionId" value="4"  id="ans4" class="form-check-input me-2"
+                                        >
                                     <label for="ans4" class="form-label me-2">D</label>
-                                    <input type="text" name="ans4" id="ans4_input" class="form-control">
+                                    <input type="text" name="option4" id="ans4_input" class="form-control">
                                 </div>
                                 @* <button type="submit" class="btn btn-primary mt-4 ms-3">Kaydet</button> *@
 
@@ -51,40 +52,36 @@
                                 <div class="card p-2">
                                     <div class="card-body">
                                         <h5 class="mb-3">Soru Seviyesi</h4>
-                                            <div>
-                                                <input type="radio" name="level" id="level1" class="form-check-input "
-                                                    value="1">
-                                                <label for="level1" class="form-label me-2">Başlangıç Seviyesi</label>
-                                            </div>
+                                          
 
                                             <div>
-                                                <input type="radio" name="level" id="level2" class="form-check-input"
+                                                <input type="radio" name="levelId" id="level2" class="form-check-input"
                                                     value="2">
                                                 <label for="level2" class="form-label me-2">A1 Seviyesi</label>
                                             </div>
 
                                             <div>
-                                                <input type="radio" name="level" id="level3" class="form-check-input "
+                                                <input type="radio" name="levelId" id="level3" class="form-check-input "
                                                     value="3">
                                                 <label for="level3" class="form-label me-2">A2 Seviyesi</label>
                                             </div>
                                             <div>
-                                                <input type="radio" name="level" id="level4" class="form-check-input "
+                                                <input type="radio" name="levelId" id="level4" class="form-check-input "
                                                     value="4">
                                                 <label for="level4" class="form-label me-2">B1 Seviyesi</label>
                                             </div>
                                             <div>
-                                                <input type="radio" name="level" id="level5" class="form-check-input "
+                                                <input type="radio" name="levelId" id="level5" class="form-check-input "
                                                     value="5">
                                                 <label for="level5" class="form-label me-2">B2 Seviyesi</label>
                                             </div>
                                             <div>
-                                                <input type="radio" name="level" id="level6" class="form-check-input "
+                                                <input type="radio" name="levelId" id="level6" class="form-check-input "
                                                     value="6">
                                                 <label for="level6" class="form-label me-2">C1 Seviyesi</label>
                                             </div>
                                             <div>
-                                                <input type="radio" name="level" id="level7" class="form-check-input "
+                                                <input type="radio" name="levelId" id="level7" class="form-check-input "
                                                     value="7">
                                                 <label for="level7" class="form-label me-2">C2 Seviyesi</label>
                                             </div>

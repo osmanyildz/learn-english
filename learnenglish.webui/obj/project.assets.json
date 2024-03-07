@@ -1296,7 +1296,8 @@
     "net7.0": [
       "Microsoft.EntityFrameworkCore.Design >= 7.0.12",
       "Microsoft.EntityFrameworkCore.Sqlite >= 7.0.9",
-      "learnenglish.data >= 1.0.0"
+      "learnenglish.data >= 1.0.0",
+      "learnenglish.entity >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1327,6 +1328,9 @@
           "projectReferences": {
             "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.data/learnenglish.data.csproj": {
               "projectPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.data/learnenglish.data.csproj"
+            },
+            "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj": {
+              "projectPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj"
             }
           }
         }

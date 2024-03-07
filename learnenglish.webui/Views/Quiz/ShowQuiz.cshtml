@@ -1,0 +1,116 @@
+@* @model List<QuizShowModel> *@
+@model ShowModel
+
+<style>
+    body {
+        background-color: #edf5f7;
+    }
+
+</style>
+@* <form action="/Quiz/ShowQuiz" method="post" >
+<div class="container" >
+    <div class="row p-5">
+        <div class="row mt-0">
+            <div class="col-1"></div>
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-header" style="background-color: #51829B">
+                        <span class=" text-white">@(Model.soruSirasi +1).Soru</span></div>
+                    <div class="card-body mt-3">
+                        <p class="fw-bold mb-4 ms-2">@Model.contents Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptate?
+                        </p>
+                        <div class="form-check ms-2 mb-2">
+                            <input class="form-check-input" type="radio" name="answer" id="flexRadioDefault1" value="1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                               A)Default radio
+                            </label>
+                        </div>
+                        <div class="form-check ms-2 mb-2">
+                            <input class="form-check-input" type="radio" name="answer" id="flexRadioDefault2" value="0">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                               B) Default radio
+                            </label>
+                        </div>
+                        <div class="form-check ms-2 mb-2">
+                            <input class="form-check-input" type="radio" name="answer" id="flexRadioDefault3" value="0">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                              C)  Default radio
+                            </label>
+                        </div>
+                        <div class="form-check ms-2 mb-2">
+                            <input class="form-check-input" type="radio" name="answer" id="flexRadioDefault4" value="0">
+                            <label class="form-check-label" for="flexRadioDefault4">
+                               D) Default radio
+                            </label>
+                        </div>
+                        <input type="hidden" name="soruSirasi" value="@Model.soruSirasi">
+        <div class="d-flex mt-4 mb-2 ms-2">
+                <button class="btn btn-sm btn-primary">Cevabı Kaydet</button>
+            </div>
+                    </div>
+                </div>
+          
+            </div>
+            
+        </div>
+  
+   
+    </div>
+
+
+</div>
+
+</form>
+ *@
+
+
+
+<form action="/Quiz/ShowQuiz" method="post" style="margin-bottom:100px;">
+<div class="container" style="position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-65%);
+    width: 850px;">
+    <div class="card">
+                    <div class="card-header" style="background-color: #51829B">
+                        <span class=" text-white">@(Model.soruSirasi +1).Soru</span></div>
+                    <div class="card-body mt-3">
+                        <p class="fw-bold mb-4 ms-2">@Model.contents Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptate?
+                        </p>
+                        <div class="form-check ms-2 mb-2">
+                            <input class="form-check-input" type="radio" name="answer" id="flexRadioDefault1" value="1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                               A)Default radio
+                            </label>
+                        </div>
+                        <div class="form-check ms-2 mb-2">
+                            <input class="form-check-input" type="radio" name="answer" id="flexRadioDefault2" value="0">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                               B) Default radio
+                            </label>
+                        </div>
+                        <div class="form-check ms-2 mb-2">
+                            <input class="form-check-input" type="radio" name="answer" id="flexRadioDefault3" value="0">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                              C)  Default radio
+                            </label>
+                        </div>
+                        <div class="form-check ms-2 mb-2">
+                            <input class="form-check-input" type="radio" name="answer" id="flexRadioDefault4" value="0">
+                            <label class="form-check-label" for="flexRadioDefault4">
+                               D) Default radio
+                            </label>
+                        </div>
+                        <input type="hidden" name="soruSirasi" value="@Model.soruSirasi">
+        <div class="d-flex mt-4 mb-2 ms-2">
+                <button class="btn btn-sm btn-primary">Cevabı Kaydet</button>
+            </div>
+                    </div>
+                </div>
+
+
+</div>
+
+</form>
+
+

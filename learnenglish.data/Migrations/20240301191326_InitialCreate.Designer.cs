@@ -10,7 +10,7 @@ using learnenglish.data.Concrete.EfCore;
 namespace learnenglish.data.Migrations
 {
     [DbContext(typeof(LearnEnglishContext))]
-    [Migration("20240229202114_InitialCreate")]
+    [Migration("20240301191326_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -25,12 +25,15 @@ namespace learnenglish.data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("QuizId")
+                    b.Property<int>("IsCorrect")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("option")
+                    b.Property<string>("Option")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("QuizId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -84,16 +87,16 @@ namespace learnenglish.data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("LevelId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("QuizContent")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("levelId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("LevelId");
+                    b.HasIndex("levelId");
 
                     b.ToTable("Quizzes");
                 });
@@ -124,7 +127,7 @@ namespace learnenglish.data.Migrations
                 {
                     b.HasOne("learnenglish.entity.Level", "Level")
                         .WithMany("Quizzes")
-                        .HasForeignKey("LevelId")
+                        .HasForeignKey("levelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

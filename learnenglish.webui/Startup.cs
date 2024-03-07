@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using learnenglish.data.Abstract;
+using learnenglish.data.Concrete.EfCore;
 
 namespace learnenglish.webui
 {
@@ -16,6 +18,9 @@ namespace learnenglish.webui
 
     public void ConfigureServices(IServiceCollection services)
     {
+        services.AddScoped<IQuizRepository,EfCoreQuizRepository>();
+        services.AddScoped<IAnswerRepository,EfCoreAnswerRepository>();
+        services.AddScoped<ILessonRepository,EfCoreLessonRepository>();
         services.AddRazorPages();
     }
 
@@ -75,11 +80,59 @@ namespace learnenglish.webui
                 pattern:"/Admin/UploadImage",
                 defaults: new {controller="Admin",action="UploadImage"}
             );
+    
              endpoints.MapControllerRoute(
                 name:"CreateQuiz",
                 pattern:"/Admin/CreateQuiz",
                 defaults: new {controller="Admin",action="CreateQuiz"}
             );
+             endpoints.MapControllerRoute(
+                name:"ShowQuiz",
+                pattern:"/Quiz/ShowQuiz",
+                defaults: new {controller="Quiz",action="ShowQuiz"}
+            );
+            endpoints.MapControllerRoute(
+                name:"BeforeQuiz",
+                pattern:"/Quiz/BeforeQuiz",
+                defaults: new {controller="Quiz",action="BeforeQuiz"}
+            );
+            endpoints.MapControllerRoute(
+                name:"LessonDelete",
+                pattern:"/Admin/QuizList",
+                defaults: new {controller="Admin",action="QuizList"}
+            );
+            endpoints.MapControllerRoute(
+                name:"QuizDelete",
+                pattern:"/Admin/QuizDelete/{id}",
+                defaults: new {controller="Admin",action="QuizDelete"}
+            );
+           
+              endpoints.MapControllerRoute(
+                name:"LessonDelete",
+                pattern:"/Admin/QuizEdit/{id?}",
+                defaults: new {controller="Admin",action="QuizEdit"}
+            );
+             endpoints.MapControllerRoute(
+                name:"LessonContent",
+                pattern:"/Admin/LessonList",
+                defaults: new {controller="Admin",action="LessonList"}
+            );
+               endpoints.MapControllerRoute(
+                name:"LessonEdit",
+                pattern:"/Admin/LessonEdit/{id?}",
+                defaults: new {controller="Admin",action="LessonEdit"}
+            );
+             endpoints.MapControllerRoute(
+                name:"LessonContent",
+                pattern:"/Lesson/LessonContent/{id}",
+                defaults: new {controller="Lesson",action="LessonContent"}
+            );
+             endpoints.MapControllerRoute(
+                name:"LessonDelete",
+                pattern:"/Admin/LessonDelete/{id}",
+                defaults: new {controller="Admin",action="LessonDelete"}
+            );
+           
         });
 
     }

@@ -1,0 +1,41 @@
+@model List<LessonTitleModel>
+
+<div class="containe mx-5">
+    <div class="row">
+        <div class="col-9 scrollable-div">
+
+            <div class="container px-4">
+             @Html.Raw(@ViewBag.LessonContent.Content)
+            </div>
+
+        </div>
+        <div class="col-3">
+     <div class="accordion" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header m-0" id="flush-headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Ders İçeriği
+      </button>
+    <hr class="m-0">
+    </h2>
+
+    <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-">
+        <div class="list-group list-group-flush m-0">
+  
+  @* <a href="#" class="list-group-item list-group-item-action active">A fourth link item</a> *@
+  @foreach(var item in Model){
+  <a href="/Lesson/LessonContent/@item.Id" class="list-group-item list-group-item-action @(ViewBag.LessonContent.Id == item.Id ? "active" : "") ">@item.Title</a>
+   
+  }
+ 
+</div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+        </div>
+    </div>
+</div>

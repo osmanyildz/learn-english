@@ -151,6 +151,9 @@
             "projectReferences": {
               "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.data/learnenglish.data.csproj": {
                 "projectPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.data/learnenglish.data.csproj"
+              },
+              "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj": {
+                "projectPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj"
               }
             }
           }

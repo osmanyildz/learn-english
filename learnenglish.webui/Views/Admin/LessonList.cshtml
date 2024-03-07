@@ -1,0 +1,43 @@
+
+@model List<LessonTitleModel>
+<div class="container my-5 p-0">
+  <table id="myTable" class="table table-hover align-middle" cellspacing="0" width="100%">
+
+    <thead>
+      <tr>
+        <th class="th-sm">Ders Adı
+        </th>
+        <th class="th-sm">Seviye
+        </th>
+        <th class="th-sm">Düzenle
+        </th>
+        <th class="th-sm">Sil
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @foreach(var item in Model){
+      <tr>
+      <td>
+        @item.Title
+      </td>
+      <td>
+        @item.LevelName
+      </td>
+      <td>
+        <a href="/Admin/LessonEdit/@item.Id" class="btn btn-primary btn-sm">Düzenle <i
+            class="fa-solid fa-pen-to-square p-"></i></a>
+      </td>
+      <td>
+        <a href="/Admin/LessonDelete/@item.Id" class="btn btn-danger btn-sm">Sil <i class="fa-solid fa-trash p-"></i></a>
+      </td>
+      </tr>
+      }
+  
+
+    </tbody>
+
+
+  </table>
+</div>

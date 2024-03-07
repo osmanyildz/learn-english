@@ -51,14 +51,14 @@ namespace learnenglish.data.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     QuizContent = table.Column<string>(type: "TEXT", nullable: false),
-                    LevelId = table.Column<int>(type: "INTEGER", nullable: false)
+                    levelId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Quizzes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Quizzes_Levels_LevelId",
-                        column: x => x.LevelId,
+                        name: "FK_Quizzes_Levels_levelId",
+                        column: x => x.levelId,
                         principalTable: "Levels",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -70,8 +70,9 @@ namespace learnenglish.data.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    option = table.Column<string>(type: "TEXT", nullable: false),
-                    QuizId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Option = table.Column<string>(type: "TEXT", nullable: false),
+                    QuizId = table.Column<int>(type: "INTEGER", nullable: false),
+                    IsCorrect = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -95,9 +96,9 @@ namespace learnenglish.data.Migrations
                 column: "LevelId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Quizzes_LevelId",
+                name: "IX_Quizzes_levelId",
                 table: "Quizzes",
-                column: "LevelId");
+                column: "levelId");
         }
 
         /// <inheritdoc />

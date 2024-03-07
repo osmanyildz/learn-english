@@ -10,7 +10,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "7.0.12",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.9",
-          "learnenglish.data": "1.0.0"
+          "learnenglish.data": "1.0.0",
+          "learnenglish.entity": "1.0.0"
         },
         "runtime": {
           "learnenglish.webui.dll": {}
