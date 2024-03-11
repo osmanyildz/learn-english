@@ -1,5 +1,5 @@
-@model QuizEditModel
- <div class="container mb-5">
+@* @model QuizEditModel *@
+ @* <div class="container mb-5">
     <div class="row">
         <div class="col-9">
             <div class="card">
@@ -48,7 +48,7 @@
                                 
                                  
                                     
-                             @* <button type="submit" class="btn btn-primary mt-4 ms-3">Kaydet</button>  *@
+                    
 
 
                             </div>
@@ -94,8 +94,115 @@
                                 </div>
                             </div>
                             <div class="mt-4 me-0">
-                            <button type="submit" class="btn btn-primary ms-4">Soruyu Güncelle</button>
+                            <button type="submit" class="btn btn-primary ms-1">Soruyu Güncelle</button>
+                           <a href="/Admin/QuizDelete/@Model.Id" class="btn btn-danger">Soruyu Sil</a>
+                            </div>
+                        </div>
+                    </form>
 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div> 
+ *@
+
+@model QuizEditModel
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-9">
+            <div class="card">
+
+                <div class="card-header">
+                    <h4 class="p-2">Soru Hazırlama Formu</h4>
+                </div>
+
+                <div class="card-body py-0">
+                    <form asp-action="QuizEdit" method="post">
+                        <input asp-for="quizId" hidden>
+                        <div class="row mb-5">
+                            <div class="col-7">
+
+                                <label asp-for="question" class="form-label">Soru</label>
+                                <textarea asp-for="question" cols="5" rows="4"
+                                    class="form-control"></textarea>
+
+    @for (int i = 0; i < Model.answerEditModels.Count; i++)
+{
+    <div class="d-flex mt-4">
+        <input asp-for="@Model.answerEditModels[i].optionId" hidden>
+
+        <input name="isCorrect" type="radio" id="radio@(i)" name="isCorrect" value="@Model.answerEditModels[i].optionId" class="form-check-input me-2" />
+        <label asp-for="@Model.answerEditModels[i].isCorrect" for="radio@(i)" class="form-label me-2">Cevap</label>
+
+        <input asp-for="@Model.answerEditModels[i].option" class="form-control">
+    </div>
+
+    
+        @if (Model.answerEditModels[i].isCorrect == 1)
+        {
+            <script>
+                document.getElementById("radio@(i)").checked = true;
+            </script>
+        }
+    
+}
+
+
+
+
+                            
+                               
+                                @* <button type="submit" class="btn btn-primary mt-4 ms-3">Kaydet</button> *@
+
+
+                            </div>
+
+                            <div class="col-3 ms-5">
+                                <div class="card p-2">
+                                    <div class="card-body">
+                                        <h5 class="mb-3">Soru Seviyesi</h4>
+                                          
+
+                                            <div>
+                                                <input type="radio" name="levelId" id="level2" class="form-check-input"
+                                                    value="2" @(Model.levelId == 2 ? "checked":"")>
+                                                <label for="level2" class="form-label me-2">A1 Seviyesi</label>
+                                            </div>
+
+                                            <div>
+                                                <input type="radio" name="levelId" id="level3" class="form-check-input "
+                                                    value="3" @(Model.levelId == 3 ? "checked":"")>
+                                                <label for="level3" class="form-label me-2">A2 Seviyesi</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="levelId" id="level4" class="form-check-input "
+                                                    value="4" @(Model.levelId == 4 ? "checked":"")>
+                                                <label for="level4" class="form-label me-2">B1 Seviyesi</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="levelId" id="level5" class="form-check-input "
+                                                    value="5" @(Model.levelId == 5 ? "checked":"")>
+                                                <label for="level5" class="form-label me-2">B2 Seviyesi</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="levelId" id="level6" class="form-check-input "
+                                                    value="6" @(Model.levelId == 6 ? "checked":"")>
+                                                <label for="level6" class="form-label me-2">C1 Seviyesi</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="levelId" id="level7" class="form-check-input "
+                                                    value="7" @(Model.levelId == 7 ? "checked":"")>
+                                                <label for="level7" class="form-label me-2">C2 Seviyesi</label>
+                                            </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 me-0">
+                            <button type="submit" class="btn btn-primary ms-1">Soruyu Kaydet</button>
                             </div>
                         </div>
                     </form>
@@ -107,5 +214,4 @@
 
 
 
-</div> 
-
+</div>

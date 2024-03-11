@@ -80,7 +80,7 @@ namespace learnenglish.webui.Controllers
             i++;
         }
         _quizRepository.CreateQuiz(quiz,answers);
-        return View();
+        return RedirectToAction("QuizList");
     }
     [HttpGet]
         public IActionResult LessonList(){
@@ -112,6 +112,7 @@ namespace learnenglish.webui.Controllers
         [HttpPost]
         public IActionResult LessonEdit(LessonEditModel lessonEditModel, int levelId){
             // System.Console.WriteLine("Buraya geldi");
+            // System.Console.WriteLine(lessonEditModel.Id);
             // System.Console.WriteLine(lessonEditModel.Title);
             // System.Console.WriteLine("------------------"+lessonEditModel.Id);
             // System.Console.WriteLine(levelId);
@@ -156,53 +157,64 @@ namespace learnenglish.webui.Controllers
     [HttpGet]
         public IActionResult QuizEdit(int id){
             var quiz = _quizRepository.GetQuizById(id);
-            var quizEditModel = new QuizEditModel(){
-                Id=quiz.Id,
-                Question=quiz.QuizContent
+            var model = new QuizEditModel(){
+                question=quiz.QuizContent,
+                quizId=quiz.Id,
+                levelId=quiz.levelId
             };
-            quizEditModel.Answers=new List<AnswerEditModel>();
-
-            foreach (var item in quiz.Answers)
-            {
-                var model = new AnswerEditModel();
-                model.Id=item.Id;
-                model.Answer=item.Option;
-                model.IsCorrect=item.IsCorrect;
-                quizEditModel.Answers.Add(model);
+            model.answerEditModels = new List<AnswerEditModel>();
+            foreach (var item in quiz.Answers){
+            model.answerEditModels.Add(new AnswerEditModel(){
+                optionId=item.Id,
+                option=item.Option,
+                isCorrect=item.IsCorrect
+            });
             }
-            ViewBag.LevelId=quiz.levelId;
-            return View(quizEditModel);
+            return View(model);
         }
         
         [HttpPost]
-        public IActionResult QuizEdit(QuizEditModel model){
+        public IActionResult QuizEdit(QuizEditModel model, int isCorrect){
 
-            var quiz = new Quiz(){
-                Id=model.Id,
-                // levelId=levelId,
-            };
-            quiz.Answers = new List<Answer>();
-            
-            for (int i = 0; i < 4; i++)
+            // System.Console.WriteLine(model.quizId);
+            // System.Console.WriteLine(model.question);
+            // System.Console.WriteLine(model.levelId);
+            System.Console.WriteLine("**************************************");
+            System.Console.WriteLine(model.levelId);
+            foreach (var item in model.answerEditModels)
             {
-                var answer = new Answer();
-
+                // System.Console.WriteLine(item.option);
+                // System.Console.WriteLine(item.optionId);
+                // System.Console.WriteLine(item.optionId);
+                // System.Console.WriteLine("IsCorrect Burada : "+ isCorrect);
             }
-
-            // System.Console.WriteLine("------------"+model.Id);
-            // System.Console.WriteLine("------------"+model.Question);
-            // System.Console.WriteLine("------------"+a);
-            // System.Console.WriteLine("------------"+b);
-            // System.Console.WriteLine("-------------"+IsCorrect);
-            // System.Console.WriteLine("-------------"+levelId);
-            
+            System.Console.WriteLine(isCorrect);
+            var quiz = new Quiz(){
+                Id=model.quizId,
+                QuizContent=model.question,
+                levelId=model.levelId
+            };
+            var answers = new List<Answer>();
+            foreach (var item in model.answerEditModels)
+            {
+                var answer = new Answer(){
+                    Id=item.optionId,
+                    Option=item.option,
+                    QuizId=model.quizId,
+                };
+                if(item.optionId==isCorrect){
+                    answer.IsCorrect=1;
+                }else{
+                    answer.IsCorrect=0;
+                }
+                
+                answers.Add(answer);
+            }
+            _quizRepository.UpdateQuiz(quiz,answers);
             return RedirectToAction("QuizList");
         }
-
-
-        [HttpPost]
         public IActionResult QuizDelete(int id){
-            System.Console.WriteLine("Buraya geldi*******************************");
+
             _quizRepository.QuizDelete(id);
             return RedirectToAction("QuizList");
 

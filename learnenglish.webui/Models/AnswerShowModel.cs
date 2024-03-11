@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace learnenglish.webui.Models
 {
-    public class AnswerEditModel
+    public class AnswerShowModel
     {
-        public int optionId { get; set; }
-        public string option { get; set; }
         public int isCorrect { get; set; }
+        public string option { get; set; }
     }
 }

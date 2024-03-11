@@ -7,9 +7,10 @@ namespace learnenglish.webui.Models
 {
     public class QuizShowModel
     {
-        public int Id { get; set; }
-        public string Question { get; set; }
-        public List<string> Options { get; set; }
-        public int CorrectAnswerId { get; set; }
+        public int id { get; set; }
+        public string question { get; set; }
+        public List<AnswerShowModel> answerShowModels { get; set; }
+        public int soruSirasi { get; set; }
+        //Options'lardan doğru olanı isCorrect alanı 1 ise bunu value'suna yaz. Yani name'i answer ve value'su @Model.IsCorrect olsun  
     }
 }

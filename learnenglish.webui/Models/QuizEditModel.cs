@@ -7,18 +7,9 @@ namespace learnenglish.webui.Models
 {
     public class QuizEditModel
     {
-        public int Id { get; set; }
-        public string Question { get; set; }
-        public List<AnswerEditModel> Answers { get; set; }
-        public QuizEditModel()
-        {
-            Answers = new List<AnswerEditModel>
-            {
-                new AnswerEditModel(),
-                new AnswerEditModel(),
-                new AnswerEditModel(),
-                new AnswerEditModel()
-            };
-        }
+        public int quizId { get; set; }
+        public string question { get; set; }
+        public List<AnswerEditModel> answerEditModels { get; set; }
+        public int levelId { get; set; }
     }
 }

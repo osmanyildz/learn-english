@@ -12,6 +12,7 @@ namespace learnenglish.data.Abstract
         List<Quiz> GetAllQuizzes();
         Quiz GetQuizById(int id);
         void QuizDelete(int id);
-        
+        void UpdateQuiz(Quiz quiz, List<Answer> answers);
+        List<Quiz> GetQuizzesByLevelId(int levelId);
     }
 }
