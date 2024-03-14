@@ -6,15 +6,20 @@ using learnenglish.data.Abstract;
 using learnenglish.webui.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.AspNetCore.Identity;
+using learnenglish.webui.Identity;
+
 
 namespace learnenglish.webui.Controllers
 {
     public class QuizController:Controller
     {
         private IQuizRepository _quizRepository;
-        public QuizController(IQuizRepository quizRepository)
+        private UserManager<User> _userManager;
+        public QuizController(IQuizRepository quizRepository, UserManager<User> userManager)
         {
             _quizRepository=quizRepository;
+            _userManager=userManager;
         }
         public List<string> Sorular(){
             var sorular = new List<string>();
@@ -25,39 +30,17 @@ namespace learnenglish.webui.Controllers
         }
 
         [HttpGet]
-        public IActionResult ShowQuiz(){
-            // var soru = new ShowModel();
-            // var sorular = Sorular();
-            // soru.contents=sorular[0];
-            // soru.soruSirasi=0;
-            // return View(soru);
-            // var soru = new QuizShowModel();
-            // soru.soruSirasi=1;
-            // soru.question=sorular[0];
-            // soru.id=0;
-            // var answerModels = new List<AnswerShowModel>();
-            // answerModels.Add(new AnswerShowModel(){
-            //     isCorrect=0,
-            //     option="1-- Bu birinci şık için olan option"
-            // });
-            // answerModels.Add(new AnswerShowModel(){
-            //     isCorrect=1,
-            //     option="2-- Bu ikinci şık için olan option--Doğru"
-            // });
-            //  answerModels.Add(new AnswerShowModel(){
-            //     isCorrect=1,
-            //     option="3-- Bu üçüncü şık için olan option"
-            // });
-            //  answerModels.Add(new AnswerShowModel(){
-            //     isCorrect=1,
-            //     option="4-- Bu dördüncü şık için olan option"
-            // });
-            var questions = _quizRepository.GetQuizzesByLevelId(3); //asp.net user'daki seviye kolonundan bu bilgiyi al ve metoda gönder
+        public async Task<IActionResult> ShowQuiz(){
+            var user = await _userManager.GetUserAsync(User);
+            if(user!=null){
+
+            var questions = _quizRepository.GetQuizzesByLevelId(user.LevelId); //asp.net user'daki seviye kolonundan bu bilgiyi al ve metoda gönder
             var question = questions[0];
             var model = new QuizShowModel();
-            model.soruSirasi=1;
+            model.soruSirasi=0;
             model.id=question.Id;
             model.question=question.QuizContent;
+            model.score=0;
             var answerList = new List<AnswerShowModel>();
             foreach (var item in question.Answers)
             {
@@ -69,27 +52,50 @@ namespace learnenglish.webui.Controllers
             }
             model.answerShowModels=answerList;
             return View(model);
+            }else{
+                return Redirect("/Home/Index");
+            }
         }
         
         [HttpPost]
-        public IActionResult ShowQuiz(int answer, int soruSirasi){ // soruSayisi kullanıcıya döndürülecek olan soru 
-            // System.Console.WriteLine(answer);
-            // var sorular = Sorular(); 
-            //Data işlemleri gerekli çağırmalar burada yapılacak
-            // var model = new ShowModel();
-            // soruSirasi++;
-            // if(soruSirasi>=sorular.Count){
-            //     return Redirect("/home/index");
-            // }
-            // model.contents=sorular[soruSirasi];
-            // model.soruSirasi=soruSirasi;
-            // System.Console.WriteLine("inci soru: " + soruSirasi);
-            System.Console.WriteLine(answer);
+        public IActionResult ShowQuiz(int answer, int soruSirasi, int score){ // soruSayisi kullanıcıya döndürülecek olan soru 
+            if(answer==1){
+                score++;
+                
+            }
+            var questions = _quizRepository.GetQuizzesByLevelId(3); //asp.net user'daki seviye kolonundan bu bilgiyi al ve metoda gönder
+            soruSirasi++;
+            if(soruSirasi!=questions.Count){
+            var question = questions[soruSirasi];
+            var model = new QuizShowModel();
             System.Console.WriteLine(soruSirasi);
-            return Redirect("/Home/Index");
+            model.soruSirasi=soruSirasi;
+            model.id=question.Id;
+            model.score=score;
+            model.question=question.QuizContent;
+            var answerList = new List<AnswerShowModel>();
+            foreach (var item in question.Answers)
+            {
+                var answerModel = new AnswerShowModel(){
+                    isCorrect=item.IsCorrect,
+                    option=item.Option
+                };
+                answerList.Add(answerModel);
+            }
+            model.answerShowModels=answerList;
+            return View(model);
+            }else{
+//Score'u burada en son AfterQuiz'e gönder alttaki Redirect'e AfterQuiz yönlendirmesini yap
+                return Redirect("/Quiz/AfterQuiz");
+            }
         }
         [HttpGet]
         public IActionResult BeforeQuiz(){
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult AfterQuiz(){
             return View();
         }
     }

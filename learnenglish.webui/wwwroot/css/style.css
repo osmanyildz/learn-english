@@ -181,3 +181,29 @@
     overflow: hidden; /* Taşan içeriği gizleyin */
     text-overflow: ellipsis; /* Taşan içeriği üç nokta (...) ile gösterin */
   }
+
+
+
+  .score_box {
+    pointer-events: auto;
+
+    width: 550px;
+    margin-top: 90px;
+    margin-bottom: 80px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    transform: translate(-4%, -5%) ;
+
+}
+    .score_box .icon {
+    font-size: 90px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.score_box .score_text {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}

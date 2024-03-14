@@ -68,10 +68,10 @@
     left: 50%;
     transform: translate(-50%,-65%);
     width: 850px;">
-
+    <input type="hidden" name="score" value="@Model.score">
  <div class="card">
             <div class="card-header" style="background-color: #51829B">
-                <span class="text-white">@(Model.soruSirasi) .Soru</span>
+                <span class="text-white">@(Model.soruSirasi +1) .Soru</span>
             </div>
             <div class="card-body mt-3">
                 @* <p class="fw-bold mb-4 ms-2">@Model.contents 

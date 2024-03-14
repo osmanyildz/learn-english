@@ -4,23 +4,63 @@ using System.Linq;
 using System.Threading.Tasks;
 using learnenglish.data.Abstract;
 using learnenglish.data.Concrete.EfCore;
+using learnenglish.webui.EmailServices;
+using learnenglish.webui.Identity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace learnenglish.webui
 {
   public class Startup
 {
-    public Startup(IConfiguration configuration)
-    {
-        Configuration = configuration;
-    }
+     private IConfiguration _configuration;
+        public Startup(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+    // public Startup(IConfiguration configuration)
+    // {
+    //     Configuration = configuration;
+    // }
 
-    public IConfiguration Configuration { get; }
+    // public IConfiguration Configuration { get; }
 
     public void ConfigureServices(IServiceCollection services)
     {
+        services.AddDbContext<ApplicationContext>(options=>options.UseSqlite("Data Source = learnenglishDB"));
+        services.AddIdentity<User,IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
+
+        services.AddControllersWithViews();
+
         services.AddScoped<IQuizRepository,EfCoreQuizRepository>();
         services.AddScoped<IAnswerRepository,EfCoreAnswerRepository>();
         services.AddScoped<ILessonRepository,EfCoreLessonRepository>();
+        services.AddScoped<IEmailSender, SmtpEmailSender>(i=> 
+        new SmtpEmailSender(
+            _configuration["EmailSender:Host"],
+            _configuration.GetValue<int>("EmailSender:Port"),
+            _configuration.GetValue<bool>("EmailSender:EnableSSL"),
+            _configuration["EmailSender:UserName"],
+            _configuration["EmailSender:Password"]
+            )
+        );
+        services.Configure<IdentityOptions>(options=>{
+            options.User.RequireUniqueEmail=true;
+            options.SignIn.RequireConfirmedEmail=true;
+            options.SignIn.RequireConfirmedPhoneNumber=false;
+        });
+        services.ConfigureApplicationCookie(options=>{
+            options.LoginPath="/Account/Login";
+            options.LogoutPath="/Account/Logout";
+            options.AccessDeniedPath="/Account/AccessDenied";
+             options.SlidingExpiration=true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                options.Cookie = new CookieBuilder(){
+                    HttpOnly=true,
+                    Name=".LearnEnglish.Security.Cookie"
+                };
+        });
+
         services.AddRazorPages();
     }
 
@@ -35,12 +75,10 @@ namespace learnenglish.webui
             app.UseExceptionHandler("/Error");
             app.UseHsts();
         }
-
+        app.UseAuthentication();
         // app.UseHttpsRedirection();
         app.UseStaticFiles();
-
         app.UseRouting();
-
         app.UseAuthorization();
 
         app.UseEndpoints(endpoints =>
@@ -54,6 +92,11 @@ namespace learnenglish.webui
                 name:"index",
                 pattern:"/home/index",
                 defaults: new {controller="Home", action="Index"}
+            );
+              endpoints.MapControllerRoute(
+                name:"logout",
+                pattern:"/Account/Logout",
+                defaults: new {controller="Account", action="Logout"}
             );
             endpoints.MapControllerRoute(
                 name:"login",
@@ -112,10 +155,20 @@ namespace learnenglish.webui
                 pattern:"/Admin/QuizEdit/{id?}",
                 defaults: new {controller="Admin",action="QuizEdit"}
             );
+            endpoints.MapControllerRoute(
+                name:"EmailConfirm",
+                pattern:"/Account/ConfirmEmail",
+                defaults: new {controller="Account",action="ConfirmEmail"}
+            );
              endpoints.MapControllerRoute(
                 name:"LessonContent",
                 pattern:"/Admin/LessonList",
                 defaults: new {controller="Admin",action="LessonList"}
+            );
+             endpoints.MapControllerRoute(
+                name:"AfterQuiz",
+                pattern:"/Quiz/AfterQuiz",
+                defaults: new {controller="Quiz",action="AfterQuiz"}
             );
                endpoints.MapControllerRoute(
                 name:"LessonEdit",
@@ -124,7 +177,7 @@ namespace learnenglish.webui
             );
              endpoints.MapControllerRoute(
                 name:"LessonContent",
-                pattern:"/Lesson/LessonContent/{id}",
+                pattern:"/Lesson/LessonContent/{id?}",
                 defaults: new {controller="Lesson",action="LessonContent"}
             );
              endpoints.MapControllerRoute(
@@ -132,7 +185,9 @@ namespace learnenglish.webui
                 pattern:"/Admin/LessonDelete/{id}",
                 defaults: new {controller="Admin",action="LessonDelete"}
             );
-           
+          
+
+
         });
 
     }

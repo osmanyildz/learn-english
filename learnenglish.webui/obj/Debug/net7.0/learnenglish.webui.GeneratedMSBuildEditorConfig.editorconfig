@@ -16,12 +16,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9BY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Db25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Gb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Admin/CreateContent.cshtml]
@@ -58,6 +74,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Lesson/LessonContent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGVzc29uL0xlc3NvbkNvbnRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Quiz/AfterQuiz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVpei9BZnRlclF1aXouY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Quiz/BeforeQuiz.cshtml]
