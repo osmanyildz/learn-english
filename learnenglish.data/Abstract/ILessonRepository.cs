@@ -14,5 +14,6 @@ namespace learnenglish.data.Abstract
         List<Lesson> GetAllLessons();
         void UpdateLesson(Lesson lesson);
         void DeleteLesson(Lesson lesson);
+        int GetLessonQuantity();
     }
 }

@@ -219,5 +219,9 @@ namespace learnenglish.webui.Controllers
             return RedirectToAction("QuizList");
 
         }
+        public IActionResult Statistics(){
+            
+            return View();
+        }
     }
 }

@@ -25,7 +25,12 @@ namespace learnenglish.webui.Controllers
        
         [HttpGet]
         public async Task<IActionResult> LessonContent(int id=0){
+            
             var user = await _userManager.GetUserAsync(User);
+            var levelId=user.LevelId;
+            if(levelId==1){
+                return RedirectToAction("LevelInformation");
+            }
             var titleModel = new List<LessonTitleModel>();
             if(user!=null){
 
@@ -69,6 +74,10 @@ namespace learnenglish.webui.Controllers
             }else{
                 return Redirect("/Index/Home");
             }
+        }
+        [HttpGet]
+        public IActionResult LevelInformation(){
+            return View();
         }
 
     }

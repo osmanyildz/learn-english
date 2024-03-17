@@ -47,6 +47,14 @@ namespace learnenglish.data.Concrete.EfCore
             }
         }
 
+        public int GetLessonQuantity()
+        {
+            using (var context = new LearnEnglishContext())
+            {
+                return context.Lessons.Count(); 
+            }
+        }
+
         public List<Lesson> GetLessonsByLevelId(int levelId)
         {
             using (var context = new LearnEnglishContext())

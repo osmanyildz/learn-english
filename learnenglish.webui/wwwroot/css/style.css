@@ -1,7 +1,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap');
-#showcase { 
-    background: 
+#showcase {
+    background:
     /* linear-gradient(to bottom, rgba(252, 153, 124, 0.2),rgba(250, 81, 30, 0.2)), */
     linear-gradient(to bottom, rgba(252, 153, 124, 0.3),rgba(250, 81, 30, 0.3)),
     url('../img/home.jpg');
@@ -45,7 +45,7 @@
     font-size: 40px;
 }
 
-#how-it-works { 
+#how-it-works {
     padding: 10px;
     text-align: center;
 }
@@ -142,7 +142,7 @@
 }
 
 .features__left {
-    background: 
+    background:
     linear-gradient(to bottom, rgba(252, 153, 124, 0.2),rgba(250, 81, 30, 0.2)),
     url('../img/quiz.jpg');
     background-size: cover;
@@ -198,7 +198,9 @@
 }
     .score_box .icon {
     font-size: 90px;
-    color: #007bff;
+    /* color: #007bff; */
+    color: rgb(221, 221, 27);
+
     margin-bottom: 10px;
 }
 

@@ -35,6 +35,7 @@ namespace learnenglish.webui
         services.AddScoped<IQuizRepository,EfCoreQuizRepository>();
         services.AddScoped<IAnswerRepository,EfCoreAnswerRepository>();
         services.AddScoped<ILessonRepository,EfCoreLessonRepository>();
+        services.AddScoped<ILevelRepository,EfCoreLevelRepository>();
         services.AddScoped<IEmailSender, SmtpEmailSender>(i=> 
         new SmtpEmailSender(
             _configuration["EmailSender:Host"],
@@ -103,6 +104,11 @@ namespace learnenglish.webui
                 pattern:"/account/login",
                 defaults: new {controller="Account",action="Login"}
             );
+              endpoints.MapControllerRoute(
+                name:"ResetPassword",
+                pattern:"/Account/ResetPassword",
+                defaults: new {controller="Account",action="ResetPassword"}
+            );
           endpoints.MapControllerRoute(
                 name:"register",
                 pattern:"/account/register",
@@ -112,6 +118,11 @@ namespace learnenglish.webui
                 name:"CreateContent",
                 pattern:"/Admin/CreateContent",
                 defaults: new {controller="Admin",action="CreateContent"}
+            );
+             endpoints.MapControllerRoute(
+                name:"Statistics",
+                pattern:"/Admin/Statistics",
+                defaults: new {controller="Admin",action="Statistics"}
             );
              endpoints.MapControllerRoute(
                 name:"CreateContent",
@@ -170,11 +181,22 @@ namespace learnenglish.webui
                 pattern:"/Quiz/AfterQuiz",
                 defaults: new {controller="Quiz",action="AfterQuiz"}
             );
+              endpoints.MapControllerRoute(
+                name:"LevelInformation",
+                pattern:"/Lesson/LevelInformation",
+                defaults: new {controller="Lesson",action="LevelInformation"}
+            );
+           endpoints.MapControllerRoute(
+            name:"ForgotPassword",
+            pattern:"/Account/ForgotPassword",
+            defaults: new {controller="Account",action="ForgotPassword"}
+           );
                endpoints.MapControllerRoute(
                 name:"LessonEdit",
                 pattern:"/Admin/LessonEdit/{id?}",
                 defaults: new {controller="Admin",action="LessonEdit"}
             );
+            
              endpoints.MapControllerRoute(
                 name:"LessonContent",
                 pattern:"/Lesson/LessonContent/{id?}",
@@ -185,9 +207,6 @@ namespace learnenglish.webui
                 pattern:"/Admin/LessonDelete/{id}",
                 defaults: new {controller="Admin",action="LessonDelete"}
             );
-          
-
-
         });
 
     }

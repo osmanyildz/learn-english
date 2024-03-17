@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.AspNetCore.Identity;
 using learnenglish.webui.Identity;
+using System.Diagnostics;
 
 
 namespace learnenglish.webui.Controllers
@@ -16,10 +17,12 @@ namespace learnenglish.webui.Controllers
     {
         private IQuizRepository _quizRepository;
         private UserManager<User> _userManager;
-        public QuizController(IQuizRepository quizRepository, UserManager<User> userManager)
+        private ILevelRepository _levelRepository;
+        public QuizController(IQuizRepository quizRepository, UserManager<User> userManager,ILevelRepository levelRepository)
         {
             _quizRepository=quizRepository;
             _userManager=userManager;
+            _levelRepository=levelRepository;
         }
         public List<string> Sorular(){
             var sorular = new List<string>();
@@ -58,14 +61,16 @@ namespace learnenglish.webui.Controllers
         }
         
         [HttpPost]
-        public IActionResult ShowQuiz(int answer, int soruSirasi, int score){ // soruSayisi kullanıcıya döndürülecek olan soru 
+        public async Task<IActionResult> ShowQuiz(int answer, int soruSirasi, int score){ // soruSayisi kullanıcıya döndürülecek olan soru 
+        System.Console.WriteLine("Cevap doğru mu?: "+answer);
             if(answer==1){
                 score++;
-                
             }
-            var questions = _quizRepository.GetQuizzesByLevelId(3); //asp.net user'daki seviye kolonundan bu bilgiyi al ve metoda gönder
+            var user = await _userManager.GetUserAsync(User);
+            var levelId = user.LevelId;
+            var questions = _quizRepository.GetQuizzesByLevelId(levelId); //asp.net user'daki seviye kolonundan bu bilgiyi al ve metoda gönder
             soruSirasi++;
-            if(soruSirasi!=questions.Count){
+            if(soruSirasi!=questions.Count && soruSirasi!=20){ //20 soru ile de sınırladım
             var question = questions[soruSirasi];
             var model = new QuizShowModel();
             System.Console.WriteLine(soruSirasi);
@@ -86,7 +91,11 @@ namespace learnenglish.webui.Controllers
             return View(model);
             }else{
 //Score'u burada en son AfterQuiz'e gönder alttaki Redirect'e AfterQuiz yönlendirmesini yap
-                return Redirect("/Quiz/AfterQuiz");
+                System.Console.WriteLine("Toplam score: "+score);
+                return RedirectToAction("AfterQuiz",new{
+                    toplamScore=score,
+                    soruSirasi=soruSirasi
+                });
             }
         }
         [HttpGet]
@@ -95,8 +104,73 @@ namespace learnenglish.webui.Controllers
         }
 
         [HttpGet]
-        public IActionResult AfterQuiz(){
-            return View();
+        public async Task<IActionResult> AfterQuiz(int toplamScore,int soruSirasi){
+
+            //ToplamScore'a göre bir seviye belirle ve kullanıcının database kolonuna(levelId) atama burada yap 
+            var user = await _userManager.GetUserAsync(User);
+            var currentLevelId= user.LevelId;
+            int levelId;
+            string levelName;
+            if(currentLevelId==1){ //Kullanıcı İlk defa sınava giriyorsa
+            if(toplamScore<4){
+                levelName="A1";
+                levelId=2;
+            }else if(toplamScore<7){
+                levelName="A2";
+                levelId=3;
+            }else if(toplamScore<10){
+                levelName="B1";
+                levelId=4;
+
+            }else if(toplamScore<13){
+                levelName="B2";
+                levelId=5;
+
+            }else if(toplamScore<16){
+                levelName="C1";
+                levelId=6;
+
+            }else{
+                levelName="C2";
+                levelId=7;
+            }
+            user.LevelId=levelId;
+            user.IsBeginner=0;
+            await _userManager.UpdateAsync(user);
+            var model = new AfterQuizModel(){
+                totalQuestion=soruSirasi,
+                correctAnswer=toplamScore,
+                incorrectAnswer=soruSirasi-toplamScore,
+                levelName=levelName,
+                Message="Tebrikler! Sınav aşamasını başarıyle geçtiniz. "+levelName+" seviyesinden artık eğitimlere başlayabilirsiniz!"
+            };
+            return View(model);
+            }else{ //Kullanıcı ilk defa sınava girmiyorsa %50 üst başarılı ise bir üst seviyeye eğer değilse aynı seviyede kalacak
+            if(toplamScore>(soruSirasi/2)){
+                currentLevelId +=1;
+                user.LevelId=currentLevelId;
+                await _userManager.UpdateAsync(user);
+                var model = new AfterQuizModel(){
+                    totalQuestion=soruSirasi,
+                    Message="Tebrikler! Bir sonraki dil seviyesine geçtiniz.",
+                    IsUp=1,
+                    incorrectAnswer=soruSirasi-toplamScore,
+                    correctAnswer=toplamScore,
+                    levelName=_levelRepository.GetLevelById(currentLevelId)
+                };
+                return View(model);
+            }else{
+                var model=new AfterQuizModel(){
+                    totalQuestion=soruSirasi,
+                    Message="Maalesef bu quizdeki sonuca göre bir sonraki eğitim seviyesine geçemediniz.",
+                    IsUp=0,
+                    incorrectAnswer=soruSirasi-toplamScore,
+                    correctAnswer=toplamScore,
+                    levelName=_levelRepository.GetLevelById(currentLevelId)
+                };
+                return View(model);
+            }
+            }
         }
     }
 }

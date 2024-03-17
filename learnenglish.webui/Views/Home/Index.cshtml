@@ -1,5 +1,5 @@
 
-
+@model IndexModel
    <main>
         <section id="showcase">
             <div class="content">
@@ -66,11 +66,11 @@
                     <h4>Seviye</h4>
                 </div>
                 <div class="col-3m">
-                    <span class="counter__item">25</span>
+                    <span class="counter__item">@Model.lessonQuantity</span>
                     <h4>İçerik</h4>
                 </div>
                 <div class="col-3m">
-                    <span class="counter__item">976</span>
+                    <span class="counter__item">@Model.userQuantity</span>
                     <h4>Kullanıcı</h4>
                 </div>
             </div>
@@ -80,7 +80,7 @@
             <div class="container">
                 <div class="row">
                     <h2 class="section-title mt-4">Eğitimden Nasıl Yararlanabilirim?</h2>
-                    <p>Öncelikle siteye üye olduktan sonra seviyeni belirlemek için hazırlana quiz adımını tamamladıktan sonra eğitime başlayabilirsin.</p>
+                    <p>Öncelikle siteye üye olduktan sonra seviyeni belirlemek için hazırlanan quiz adımını tamamladıktan sonra eğitime başlayabilirsin.</p>
                     <div class="icon-box col-3m mt-4">
                         <i class="fas fa-sign-in-alt fa-3x"></i>
                         <h3 class="mt-3">Kayıt Ol</h3>

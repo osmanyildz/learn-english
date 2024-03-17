@@ -1,0 +1,110 @@
+  
+  
+  
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <div class="row ">
+    <div class="col-6">
+  <div id="myChart" style="width:100%; max-width:600px; height:500px;"></div>
+  <input type="hidden" name="yuzdelik" id="yuzde1" value="20">
+    </div>
+    <div class="col-6">
+        <div id="myChart2" style="width:100%; max-width:600px; height:500px;"></div>
+    </div>
+  </div>
+<div class="row">
+    <div class="col-6">
+                <div id="myChart3" style="width:100%; max-width:600px; height:500px;"></div>
+
+    </div>
+</div>
+  <script>
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      // id'si yuzde1 olan input elemanının value'sini al
+      let yuzdeElemani = document.getElementById("yuzde1");
+      let yuzde = parseFloat(yuzdeElemani.value); // Değeri float türüne çevirme
+      
+      // Değerin doğru bir şekilde alındığını kontrol etmek için console.log ile yazdırma
+      console.log("Yüzde değeri: ", yuzde);
+      
+      // Set Data
+      const data = google.visualization.arrayToDataTable([
+        ['Country', 'Mhl'],
+        ['Italy', yuzde],
+        ['France', 20],
+        ['Spain', 20],
+        ['USA', 20],
+        ['Argentina', 20]
+      ]);
+
+      // Set Options
+      const options = {
+        title: 'World Wide Wine Production',
+        is3D:true
+      };
+
+      // Draw
+      const chart = new google.visualization.PieChart(document.getElementById('myChart'));
+      chart.draw(data, options);
+    }
+  </script>
+
+<script>
+google.charts.load('current',{packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+// Set Data
+const data = google.visualization.arrayToDataTable([
+  ['Price', 'Size'],
+  [50,7],[60,8],[70,8],[80,9],[90,9],
+  [100,9],[110,10],[120,11],
+  [130,14],[140,14],[150,15]
+]);
+
+// Set Options
+const options = {
+  title: 'House Prices vs. Size',
+  hAxis: {title: 'Square Meters'},
+  vAxis: {title: 'Price in Millions'},
+  legend: 'none'
+};
+
+// Draw
+const chart = new google.visualization.LineChart(document.getElementById('myChart2'));
+chart.draw(data, options);
+
+}
+</script>
+
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+// Set Data
+const data = google.visualization.arrayToDataTable([
+  ['Contry', 'Mhl'],
+  ['Italy',55],
+  ['France',49],
+  ['Spain',44],
+  ['USA',24],
+  ['Argentina',15]
+]);
+
+// Set Options
+const options = {
+  title:'World Wide Wine Production'
+};
+
+// Draw
+const chart = new google.visualization.BarChart(document.getElementById('myChart3'));
+chart.draw(data, options);
+
+}
+</script>
+

@@ -8,6 +8,6 @@ namespace learnenglish.data.Abstract
 {
     public interface ILevelRepository:IRepository<Level>
     {
-        
+        string GetLevelById(int id);
     }
 }

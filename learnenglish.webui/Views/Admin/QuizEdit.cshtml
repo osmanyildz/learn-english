@@ -165,7 +165,11 @@
                                     <div class="card-body">
                                         <h5 class="mb-3">Soru Seviyesi</h4>
                                           
-
+<div>
+                                                <input type="radio" name="levelId" id="level1" class="form-check-input"
+                                                    value="1" @(Model.levelId == 1 ? "checked":"")>
+                                                <label for="level1" class="form-label me-2">Beginner</label>
+                                            </div>
                                             <div>
                                                 <input type="radio" name="levelId" id="level2" class="form-check-input"
                                                     value="2" @(Model.levelId == 2 ? "checked":"")>
