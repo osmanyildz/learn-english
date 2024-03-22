@@ -1,110 +1,479 @@
-  
-  
-  
-  <script src="https://www.gstatic.com/charts/loader.js"></script>
-  <div class="row ">
-    <div class="col-6">
-  <div id="myChart" style="width:100%; max-width:600px; height:500px;"></div>
-  <input type="hidden" name="yuzdelik" id="yuzde1" value="20">
-    </div>
-    <div class="col-6">
-        <div id="myChart2" style="width:100%; max-width:600px; height:500px;"></div>
+@* <div class="container">
+<div class="row ">
+
+<div class="card">
+<div class="card-header">
+<h5>Kullanıcılar</h5>
+</div>
+<div class="card-body">
+<div class="col-6">
+
+<div id="myChart" style="width:100%; max-width:600px; height:500px;"></div>
+</div>
+
+</div>
+</div>
+</div>
+</div> *@
+
+@model StatisticsModel
+
+<style>
+  body {
+    background-color: #edf5f7;
+  }
+</style>
+
+@* Kullanıcı İstatistikleri *@
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header text-center p-3">
+          <h3>Kullanıcı İstatistikleri</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6">
+              <div id="myChart" style="width:100%; max-width:600px; height:500px;"></div>
+            </div>
+            <div class="col-6">
+              <div id="myChart2" style="width:100%; max-width:600px; height:400px;"></div>
+            </div>
+          </div>
+          <div class="row mt-0">
+            <div class="col-6 mt-0">
+              <div id="myChart3" style="width:100%; max-width:600px; height:300px;"></div>
+            </div>
+            <div class="col-6 mt-0">
+              <div id="myChart4" style="width:100%; max-width:600px; height:300px;">
+              </div>
+              <input type="hidden" name="A1PersonQuantity" id="a1Qua" value="@Model.A1PersonQuantity">
+              <input type="hidden" name="A2PersonQuantity" id="a2Qua" value="@Model.A2PersonQuantity">
+              <input type="hidden" name="B1PersonQuantity" id="b1Qua" value="@Model.B1PersonQuantity">
+              <input type="hidden" name="B2PersonQuantity" id="b2Qua" value="@Model.B2PersonQuantity">
+              <input type="hidden" name="C1PersonQuantity" id="c1Qua" value="@Model.C1PersonQuantity">
+              <input type="hidden" name="C2PersonQuantity" id="c2Qua" value="@Model.C2PersonQuantity">
+
+              <input type="hidden" name="A1LessonQuantity" id="a1LessonQua" value="@Model.A1LessonQuantity">
+              <input type="hidden" name="A2LessonQuantity" id="a2LessonQua" value="@Model.A2LessonQuantity">
+              <input type="hidden" name="B1LessonQuantity" id="b1LessonQua" value="@Model.B1LessonQuantity">
+              <input type="hidden" name="B2LessonQuantity" id="b2LessonQua" value="@Model.B2LessonQuantity">
+              <input type="hidden" name="C1LessonQuantity" id="c1LessonQua" value="@Model.C1LessonQuantity">
+              <input type="hidden" name="C2LessonQuantity" id="c2LessonQua" value="@Model.C2LessonQuantity">
+
+              <input type="hidden" name="A1QuizQuantity" id="a1QuizQua" value="@Model.A1QuizQuantity">
+              <input type="hidden" name="A2QuizQuantity" id="a2QuizQua" value="@Model.A2QuizQuantity">
+              <input type="hidden" name="B1QuizQuantity" id="b1QuizQua" value="@Model.B1QuizQuantity">
+              <input type="hidden" name="B2QuizQuantity" id="b2QuizQua" value="@Model.B2QuizQuantity">
+              <input type="hidden" name="C1QuizQuantity" id="c1QuizQua" value="@Model.C1QuizQuantity">
+              <input type="hidden" name="C2QuizQuantity" id="c2QuizQua" value="@Model.C2QuizQuantity">
+               <input type="hidden" name="BeginnerQuizQuantity" id="beginnerQuizQua" value="@Model.BeginnerQuizQuantity">
+
+              <input type="hidden" name="ActiveUserQuantity" id="activeUserQuantity" value="@Model.ActiveUserQuantity">
+              <input type="hidden" name="InactiveUserQuantity" id="inactiveUserQuantity"
+                value="@Model.InactiveUserQuantity">
+
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-<div class="row">
-    <div class="col-6">
-                <div id="myChart3" style="width:100%; max-width:600px; height:500px;"></div>
-
-    </div>
 </div>
-  <script>
-    google.charts.load('current', { 'packages': ['corechart'] });
-    google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
-      // id'si yuzde1 olan input elemanının value'sini al
-      let yuzdeElemani = document.getElementById("yuzde1");
-      let yuzde = parseFloat(yuzdeElemani.value); // Değeri float türüne çevirme
-      
-      // Değerin doğru bir şekilde alındığını kontrol etmek için console.log ile yazdırma
-      console.log("Yüzde değeri: ", yuzde);
-      
-      // Set Data
-      const data = google.visualization.arrayToDataTable([
-        ['Country', 'Mhl'],
-        ['Italy', yuzde],
-        ['France', 20],
-        ['Spain', 20],
-        ['USA', 20],
-        ['Argentina', 20]
-      ]);
 
-      // Set Options
-      const options = {
-        title: 'World Wide Wine Production',
-        is3D:true
-      };
+@* Ders İçerikleri *@
 
-      // Draw
-      const chart = new google.visualization.PieChart(document.getElementById('myChart'));
-      chart.draw(data, options);
-    }
-  </script>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header text-center p-3">
+          <h3>Ders İçerikleri</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6">
+              <div id="myChart5" style="width:100%; max-width:600px; height:500px;"></div>
+            </div>
+
+            <div class="col-6 mt-0">
+              <div id="myChart6" style="width:100%; max-width:600px; height:500px;"></div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+@* Quiz Bilgileri *@
+
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header text-center p-3">
+          <h3>Quiz İstatistikleri</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6">
+              <div id="myChart7" style="width:100%; max-width:600px; height:500px;"></div>
+            </div>
+
+            <div class="col-6 mt-0">
+              <div id="myChart8" style="width:100%; max-width:600px; height:500px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+
 
 <script>
-google.charts.load('current',{packages:['corechart']});
-google.charts.setOnLoadCallback(drawChart);
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
 
-function drawChart() {
+  function drawChart() {
 
-// Set Data
-const data = google.visualization.arrayToDataTable([
-  ['Price', 'Size'],
-  [50,7],[60,8],[70,8],[80,9],[90,9],
-  [100,9],[110,10],[120,11],
-  [130,14],[140,14],[150,15]
-]);
+    let a1Qua = document.getElementById("a1Qua");
+    let A1Quantity = parseInt(a1Qua.value);
 
-// Set Options
-const options = {
-  title: 'House Prices vs. Size',
-  hAxis: {title: 'Square Meters'},
-  vAxis: {title: 'Price in Millions'},
-  legend: 'none'
-};
+    let a2Qua = document.getElementById("a2Qua");
+    let A2Quantity = parseInt(a2Qua.value);
 
-// Draw
-const chart = new google.visualization.LineChart(document.getElementById('myChart2'));
-chart.draw(data, options);
+    let b1Qua = document.getElementById("b1Qua");
+    let B1Quantity = parseInt(b1Qua.value);
 
-}
+    let b2Qua = document.getElementById("b2Qua");
+    let B2Quantity = parseInt(b2Qua.value);
+
+    let c1Qua = document.getElementById("c1Qua");
+    let C1Quantity = parseInt(c1Qua.value);
+
+    let c2Qua = document.getElementById("c2Qua");
+    let C2Quantity = parseInt(c2Qua.value);
+
+    console.log("Yüzde değeri: ", C2Quantity);
+    console.log("Yüzde değeri: ", C1Quantity);
+
+
+    const data = google.visualization.arrayToDataTable([
+      ['Seviye', 'Yuzde'],
+      ['A1 Seviyesi', A1Quantity],
+      ['A2 Seviyesi', A2Quantity],
+      ['B1 Seviyesi', B1Quantity],
+      ['B2 Seviyesi', B2Quantity],
+      ['C1 Seviyesi', C1Quantity],
+      ['C2 Seviyesi', C2Quantity]
+    ]);
+
+    // Set Options
+    const options = {
+      title: 'Kullanıcıların Bulunduğu Seviyeler',
+      is3D: true
+    };
+
+    // Draw
+    const chart = new google.visualization.PieChart(document.getElementById('myChart'));
+    chart.draw(data, options);
+  }
 </script>
+
 
 <script>
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
+  google.charts.load('current', { packages: ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
 
-function drawChart() {
 
-// Set Data
-const data = google.visualization.arrayToDataTable([
-  ['Contry', 'Mhl'],
-  ['Italy',55],
-  ['France',49],
-  ['Spain',44],
-  ['USA',24],
-  ['Argentina',15]
-]);
+  let a1Qua = document.getElementById("a1Qua");
+  let A1Quantity = parseInt(a1Qua.value);
 
-// Set Options
-const options = {
-  title:'World Wide Wine Production'
-};
+  let a2Qua = document.getElementById("a2Qua");
+  let A2Quantity = parseInt(a2Qua.value);
 
-// Draw
-const chart = new google.visualization.BarChart(document.getElementById('myChart3'));
-chart.draw(data, options);
+  let b1Qua = document.getElementById("b1Qua");
+  let B1Quantity = parseInt(b1Qua.value);
 
-}
+  let b2Qua = document.getElementById("b2Qua");
+  let B2Quantity = parseInt(b2Qua.value);
+
+  let c1Qua = document.getElementById("c1Qua");
+  let C1Quantity = parseInt(c1Qua.value);
+
+  let c2Qua = document.getElementById("c2Qua");
+  let C2Quantity = parseInt(c2Qua.value);
+
+
+  function drawChart() {
+
+    // Set Data
+    const data = google.visualization.arrayToDataTable([
+      ['Price', 'Size'],
+      ['A1', A1Quantity], ['A2', A2Quantity], ['B1', B1Quantity], ['B2', B2Quantity], ['C1', C1Quantity],
+      ['C2', C2Quantity]
+    ]);
+
+    // Set Options
+    const options = {
+      title: 'Seviyelere Ait Kullanıcıların Sayısı',
+      hAxis: { title: 'Seviye' },
+      vAxis: { title: 'Kişi Sayısı' },
+      legend: 'none'
+    };
+
+    // Draw
+    const chart = new google.visualization.LineChart(document.getElementById('myChart2'));
+    chart.draw(data, options);
+
+  }
 </script>
 
+
+
+<script>
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+  let activeUsers = document.getElementById("activeUserQuantity");
+  let sayi = parseInt(activeUsers.value);
+
+  let InactiveUsers = document.getElementById("inactiveUserQuantity");
+  let sayi2 = parseInt(InactiveUsers.value);
+
+
+
+  function drawChart() {
+
+    // Set Data
+    const data = google.visualization.arrayToDataTable([
+      ['Aktiflik', 'Kullanıcı Sayısı'],
+      ['Aktif Kullanıcı', sayi],
+      ['Aktif Olmayan Kullanıcı', sayi2],
+      ['Toplam Kullanıcı Sayısı', sayi + sayi2],
+    ]);
+
+    // Set Options
+    const options = {
+      title: 'Kullanıcıların Aktiflik Durumu (Mail Onayına Göre)'
+    };
+
+    // Draw
+    const chart = new google.visualization.BarChart(document.getElementById('myChart3'));
+    chart.draw(data, options);
+
+  }
+</script>
+
+
+<script>
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+  let s1 = document.getElementById("activeUserQuantity");
+  let s = parseInt(activeUsers.value);
+
+  let s2 = document.getElementById("inactiveUserQuantity");
+  let s22 = parseInt(InactiveUsers.value);
+
+
+  function drawChart() {
+
+    // Set Data
+    const data = google.visualization.arrayToDataTable([
+      ['Contry', 'Mhl'],
+      ['Aktif Kullanıcı', s],
+      ['Aktif Olmayan Kullanıcı', s22],
+    ]);
+
+    // Set Options
+    const options = {
+      title: 'Kullanıcıların Aktiflik Yüzdesi'
+    };
+
+    // Draw
+    const chart = new google.visualization.PieChart(document.getElementById('myChart4'));
+    chart.draw(data, options);
+
+  }
+</script>
+
+
+
+<script>
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+
+  let d1 = document.getElementById("a1LessonQua");
+  let da1 = parseInt(d1.value);
+
+  let d2 = document.getElementById("a2LessonQua");
+  let da2 = parseInt(d2.value);
+
+  let d3 = document.getElementById("b1LessonQua");
+  let db3 = parseInt(d3.value);
+
+  let d4 = document.getElementById("b2LessonQua");
+  let db4 = parseInt(d4.value);
+
+  let d5 = document.getElementById("c1LessonQua");
+  let dc5 = parseInt(d5.value);
+
+  let d6 = document.getElementById("c2LessonQua");
+  let dc6 = parseInt(d6.value);
+
+  function drawChart() {
+
+    // Veri seti
+    const data = google.visualization.arrayToDataTable([
+      ['Seviye', 'Ders Sayısı', { role: 'style' }],
+      ['A1 Seviyesi', da1, 'color: #007bff'],
+      ['A2 Seviyesi', da2, 'color: #28a745'],
+      ['B1 Seviyesi', db3, 'color: #ffc107'],
+      ['B2 Seviyesi', db4, 'color: #dc3545'],
+      ['C1 Seviyesi', dc5, 'color: #6c757d'],
+      ['C2 Seviyesi', dc6, 'color: #dc3545']
+
+    ]);
+
+    // Seçenekler
+    const options = {
+      title: 'Seviyelere Ait Ders Sayıları'
+    };
+
+    // Grafik çizimi
+    const chart = new google.visualization.BarChart(document.getElementById('myChart5'));
+    chart.draw(data, options);
+
+  }
+</script>
+
+
+<script>
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+
+    // Set Data
+    const data = google.visualization.arrayToDataTable([
+      ['Contry', 'Mhl'],
+      ['A1 Seviyesi', da1],
+      ['A2 Seviyesi', da2],
+      ['B1 Seviyesi', db3],
+      ['B2 Seviyesi', db4],
+      ['C1 Seviyesi', dc5],
+      ['C2 Seviyesi', dc6],
+    ]);
+
+    // Set Options
+    const options = {
+      title: 'Seviyelere Ait Derslerin Yüzdesi'
+    };
+
+    // Draw
+    const chart = new google.visualization.PieChart(document.getElementById('myChart6'));
+    chart.draw(data, options);
+
+  }
+</script>
+
+
+
+
+
+
+<script>
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+
+  let a1 = document.getElementById("a1QuizQua");
+  let qa1 = parseInt(a1.value);
+
+  let a2 = document.getElementById("a2QuizQua");
+  let qa2 = parseInt(a2.value);
+
+  let b1 = document.getElementById("b1QuizQua");
+  let qb1 = parseInt(b1.value);
+
+  let b2 = document.getElementById("b2QuizQua");
+  let qb2 = parseInt(b2.value);
+
+  let c1 = document.getElementById("c1QuizQua");
+  let qc1 = parseInt(c1.value);
+
+  let c2 = document.getElementById("c2QuizQua");
+  let qc2 = parseInt(c2.value);
+
+  function drawChart() {
+
+    // Veri seti
+    const data = google.visualization.arrayToDataTable([
+      ['Seviye', 'Soru Sayısı', { role: 'style' }],
+      ['Beginner Seviyesi', 1, 'color: #430A5D'],
+      ['A1 Seviyesi', qa1, 'color: #007bff'],
+      ['A2 Seviyesi', qa2, 'color: #28a745'],
+      ['B1 Seviyesi', qb1, 'color: #ffc107'],
+      ['B2 Seviyesi', qb2, 'color: #dc3545'],
+      ['C1 Seviyesi', qc1, 'color: #6c757d'],
+      ['C2 Seviyesi', qc2, 'color: #dc3545']
+
+    ]);
+
+    // Seçenekler
+    const options = {
+      title: 'Seviyelere Ait Quiz Soru Sayıları'
+    };
+
+    // Grafik çizimi
+    const chart = new google.visualization.BarChart(document.getElementById('myChart7'));
+    chart.draw(data, options);
+
+  }
+</script>
+
+
+<script>
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+
+  let beginner = document.getElementById("beginnerQuizQua");
+  let bq = parseInt(beginner.value);
+  function drawChart() {
+
+    // Set Data
+    const data = google.visualization.arrayToDataTable([
+      ['Contry', 'Mhl'],
+      ['Beginner Seviyesi', bq],
+      ['A1 Seviyesi', qa1],
+      ['A2 Seviyesi', qa2],
+      ['B1 Seviyesi', qb1],
+      ['B2 Seviyesi', qb2],
+      ['C1 Seviyesi', qc1],
+      ['C2 Seviyesi', qc2],
+    ]);
+
+    // Set Options
+    const options = {
+      title: 'Seviyelere Ait Quiz Sorularının Yüzdesi'
+    };
+
+    // Draw
+    const chart = new google.visualization.PieChart(document.getElementById('myChart8'));
+    chart.draw(data, options);
+
+  }
+</script>

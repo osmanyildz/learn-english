@@ -13,8 +13,32 @@
       "PackagePath": "staticwebassets/img/.DS_Store"
     },
     {
+      "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/38c64005-3d99-43c4-8255-cc4f25f4b5b2.webp",
+      "PackagePath": "staticwebassets/img/38c64005-3d99-43c4-8255-cc4f25f4b5b2.webp"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/5bfaa2a6-c035-4cbe-b5f7-47fce51f4fe6.jpg",
+      "PackagePath": "staticwebassets/img/5bfaa2a6-c035-4cbe-b5f7-47fce51f4fe6.jpg"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/7fc6664c-6b22-4b1c-808f-8876161fe47f.jpeg",
+      "PackagePath": "staticwebassets/img/7fc6664c-6b22-4b1c-808f-8876161fe47f.jpeg"
+    },
+    {
       "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/books.png",
       "PackagePath": "staticwebassets/img/books.png"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/checked.png",
+      "PackagePath": "staticwebassets/img/checked.png"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/d265284d-7067-45ca-991b-aad2b7ee3177.png",
+      "PackagePath": "staticwebassets/img/d265284d-7067-45ca-991b-aad2b7ee3177.png"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/dfd58cbf-7c96-4a33-bb6b-0b555bed3a05.jpg",
+      "PackagePath": "staticwebassets/img/dfd58cbf-7c96-4a33-bb6b-0b555bed3a05.jpg"
     },
     {
       "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/home.jpg",
@@ -43,6 +67,14 @@
     {
       "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/saat.jpg",
       "PackagePath": "staticwebassets/img/saat.jpg"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/sand-clock.png",
+      "PackagePath": "staticwebassets/img/sand-clock.png"
+    },
+    {
+      "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/user2.png",
+      "PackagePath": "staticwebassets/img/user2.png"
     },
     {
       "Id": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/work.jpg",

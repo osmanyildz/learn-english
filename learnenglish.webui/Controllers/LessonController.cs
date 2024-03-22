@@ -36,6 +36,8 @@ namespace learnenglish.webui.Controllers
 
             var lessons = _lessonRepository.GetLessonsByLevelId(user.LevelId);
             var i=0;
+            System.Console.WriteLine(lessons.ElementAt(0).LessonContent);
+
             foreach (var item in lessons)
             {
                 titleModel.Add(new LessonTitleModel(){
@@ -75,6 +77,8 @@ namespace learnenglish.webui.Controllers
                 return Redirect("/Index/Home");
             }
         }
+        
+      
         [HttpGet]
         public IActionResult LevelInformation(){
             return View();

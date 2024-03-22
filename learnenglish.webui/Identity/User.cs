@@ -11,5 +11,6 @@ namespace learnenglish.webui.Identity
         public int LevelId { get; set; }
         public int LastLessonId { get; set; }
         public int IsBeginner { get; set; } //Başlangıç sınavını geçmediyse(yani yeni kayıt olup seviye belirleme sınavına girmediyse) burası 0, eğer girdiyse burası 1 olacak. 
+        public string ProfileUrl { get; set; }
     }
 }

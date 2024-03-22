@@ -1,0 +1,318 @@
+@model ProfileModel
+<style>
+    body {
+        margin-top: 0px;
+        color: #1a202c;
+        text-align: left;
+        background-color: #e2e8f0;
+    }
+
+    .main-body {
+        padding: 15px;
+    }
+
+    .card {
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 0 solid rgba(0, 0, 0, .125);
+        border-radius: .25rem;
+    }
+
+    .card-body {
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1rem;
+    }
+
+    .gutters-sm {
+        margin-right: -8px;
+        margin-left: -8px;
+    }
+
+    .gutters-sm>.col,
+    .gutters-sm>[class*=col-] {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+    .mb-3,
+    .my-3 {
+        margin-bottom: 1rem !important;
+    }
+
+    .bg-gray-300 {
+        background-color: #e2e8f0;
+    }
+
+    .h-100 {
+        height: 100% !important;
+    }
+
+    .shadow-none {
+        box-shadow: none !important;
+    }
+
+
+
+
+    .profil-resmi {
+        position: relative;
+        display: inline-block;
+    }
+
+    .profil-degisim {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .profil-resmi:hover .profil-degisim {
+        opacity: 1;
+    }
+</style>
+
+<div class="container">
+    <div class="main-body">
+
+
+        <form action="/Account/EditProfile" method="post" enctype="multipart/form-data">
+
+            <div class="row gutters-sm">
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <div class="profil-resmi">
+
+                                    @if (@Model.ProfileUrl == null)
+                                    {
+                                        <label for="fileInput">
+                                            <div class="profil-resmi">
+                                                <img src="~/img/user2.png" class="rounded-circle" width="150">
+                                                <div class="profil-degisim text-center">
+                                                    <i class="fas fa-camera" style="width: 90px;"></i>Profili Değiştir
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <input type="file" id="fileInput" name="ProfileFile" style="display: none;">
+                                    }
+                                    else
+                                    {
+                                        <label for="fileInput">
+                                            <div class="profil-resmi">
+                                                <img src="~/img/@Model.ProfileUrl" class="rounded-circle" width="150">
+                                                <div class="profil-degisim text-center">
+                                                    <i class="fas fa-camera" style="width: 90px;"></i>Profili Değiştir
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <input type="file" id="fileInput" name="ProfileFile" style="display: none;">
+                                    }
+
+                                </div>
+                                <div class="mt-3">
+                                    <h4>@Model.UserName</h4>
+                                    <p class="text-secondary mb-1">@Model.LevelName</p>
+                                    <p class="text-muted font-size-sm">En son kalınan ders: @Model.LastLessonName</p>
+                                    <a class="btn btn-primary">Eğitimlerim</a>
+                                    <a class="btn btn-warning">Quize Git</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-md-8">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0 mt-2">Kullanıcı Adı</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+
+                                    <input type="text" name="UserName" id="ans1_input" class="form-control col-sm-9"
+                                        value="@Model.UserName">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0 mt-2">Email</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" name="Email" id="ans2_input" class="form-control col-sm-9"
+                                        value="@Model.Email">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Seviye</h6>
+                                </div>
+                                <div class="col-sm-8 text-secondary ms-2">
+                                    @Model.LevelName
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Şifre</h6>
+                                </div>
+                                <div class="col-sm-8 text-secondary ms-1">
+                                    <a href="/Account/ForgotPassword">Şifreyi değiştir</a>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button type="submit" class="btn btn-warning">Düzenle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row gutters-sm">
+                        <div class="col-sm-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6 class="d-flex align-items-center mb-3"><i
+                                            class="material-icons text-info mr-2">Dersler</i></h6>
+                                    @* İki adet card olsun birisi seviye diğer eğitim card'ı olsun. *@
+                                    @* Bir de hangi seviyedesin ve hangi seviyeleri geçtin. Mesela A1'i geçtiysen
+                                    Progress
+                                    bar tam dolu olsun. Eğer A2 seviyesindeysen Progress barın yarısı dolu olsun eğer
+                                    geçersen o bar dolsun ve B1 barının yarısı dolu olsun *@
+                                    @* Mesela eğer A2 seviyesindeysen buradaki bir progress bar tam dolu olsun. A2
+                                    seviyesindeki eğitmlerin ortasındaysan A2 *@
+                                    @{
+                                        var count = 0;
+                                    }
+                                    @foreach (var item in @Model.LessonsNames)
+                                    {
+
+                                        <small>@item</small>
+                                        @if (count == 0 && item.CompareTo(Model.LastLessonName) != 0)
+                                        {
+                                            <img src="~/img/checked.png" style="width: 15px; height:15px;" class="ms-1">
+                                        }
+                                        else if (item.CompareTo(Model.LastLessonName) == 0)
+                                        {
+                                            <img src="~/img/sand-clock.png" style="width: 15px; height:15px;" class="ms-1">
+                                        }
+                                        <div class="progress mb-3" style="height: 5px">
+                                            @if (count == 0)
+                                            {
+                                                <div class="progress-bar bg-primary" role="progressbar" style="width: 100%"
+                                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                            }
+                                            @if (item.CompareTo(Model.LastLessonName) == 0)
+                                            {
+                                                @* <div class="progress-bar bg-primary" role="progressbar"
+                                        style="width: @(item.CompareTo(Model.LastLessonName) == 0 ? "100%" : "0%")"
+                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                        @{count+=1;} *@
+                                                <small class="text-white">Lorem ipsum dolor sit amet, cons Lorem, ipsum dolor.
+                                                    Lorem ipsum dol</small>
+                                                <div class="progress mb-3" style="height: 5px">
+                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"
+                                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    @{
+                                                        count += 1;
+                                                    }
+                                                </div>
+                                            }
+                                        </div>
+                                    }
+
+                                    @* <small>Web Design</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"
+                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <small>Website Markup</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 72%"
+                                    aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <small>One Page</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 89%"
+                                    aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <small>Mobile Template</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 55%"
+                                    aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <small>Backend API</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 66%"
+                                    aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div> *@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6 class="d-flex align-items-center mb-3"><i
+                                            class="material-icons text-info mr-2">assignment</i>Project Status</h6>
+                                    <small>Web Design</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"
+                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+
+                                    <small>Website Markup</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 72%"
+                                            aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <small>One Page</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 89%"
+                                            aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <small>Mobile Template</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 55%"
+                                            aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <small>Backend API</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 66%"
+                                            aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

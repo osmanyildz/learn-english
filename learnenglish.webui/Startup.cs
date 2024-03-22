@@ -109,6 +109,11 @@ namespace learnenglish.webui
                 pattern:"/Account/ResetPassword",
                 defaults: new {controller="Account",action="ResetPassword"}
             );
+               endpoints.MapControllerRoute(
+                name:"EditProfile",
+                pattern:"/Account/EditProfile",
+                defaults: new {controller="Account",action="EditProfile"}
+            );
           endpoints.MapControllerRoute(
                 name:"register",
                 pattern:"/account/register",
@@ -125,9 +130,14 @@ namespace learnenglish.webui
                 defaults: new {controller="Admin",action="Statistics"}
             );
              endpoints.MapControllerRoute(
-                name:"CreateContent",
+                name:"Show",
                 pattern:"/Admin/Showing",
                 defaults: new {controller="Admin",action="Showing"}
+            );
+             endpoints.MapControllerRoute(
+                name:"Profile",
+                pattern:"/Account/Profile",
+                defaults: new {controller="Account",action="Profile"}
             );
             endpoints.MapControllerRoute(
                 name:"UploadImage",
