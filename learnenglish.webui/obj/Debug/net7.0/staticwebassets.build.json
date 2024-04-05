@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XxPwzgwTL4XILRbDwpNOceTNJdPdeblhQ2xFO21L8CM=",
+  "Hash": "mJAHTZSK5KhgazDHzSfkNPVZh8b3jReKd1pqFFW86Yk=",
   "Source": "learnenglish.webui",
   "BasePath": "_content/learnenglish.webui",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/img/.DS_Store"
+    },
+    {
+      "Identity": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/0699aed1-de79-4fd0-9531-2ba75391b272.jpeg",
+      "SourceId": "learnenglish.webui",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/",
+      "BasePath": "_content/learnenglish.webui",
+      "RelativePath": "img/0699aed1-de79-4fd0-9531-2ba75391b272.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/0699aed1-de79-4fd0-9531-2ba75391b272.jpeg"
     },
     {
       "Identity": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/wwwroot/img/38c64005-3d99-43c4-8255-cc4f25f4b5b2.webp",

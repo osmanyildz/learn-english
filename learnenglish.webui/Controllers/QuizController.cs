@@ -149,6 +149,7 @@ namespace learnenglish.webui.Controllers
             if(toplamScore>(soruSirasi/2)){
                 currentLevelId +=1;
                 user.LevelId=currentLevelId;
+                user.LastLessonId=0;
                 await _userManager.UpdateAsync(user);
                 var model = new AfterQuizModel(){
                     totalQuestion=soruSirasi,

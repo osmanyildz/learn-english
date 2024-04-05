@@ -91,7 +91,8 @@ namespace learnenglish.webui.Controllers
                 LevelId = 1,
                 IsBeginner = 1,
                 UserName = model.UserName,
-                Email = model.Email
+                Email = model.Email,
+                ProfileUrl=""
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);
@@ -231,27 +232,68 @@ namespace learnenglish.webui.Controllers
             var profileUrl = user.ProfileUrl;
             var levelName = _levelRepository.GetLevelById(user.LevelId);
 
-
             var lastLessonName = _lessonRepository.GetLessonsByLevelId(user.LevelId).Where(l => l.Id == user.LastLessonId).FirstOrDefault();
 
-
-            var lessonsNames = _lessonRepository.GetAllLessons().Where(a => a.LevelId == user.LevelId).Select(l => l.LessonTitle).ToList();
-
-            var model = new ProfileModel()
+            if (lastLessonName != null) // lastLessonName null değilse devam et
             {
-                UserName = userName,
-                LevelName = levelName,
-                LastLessonName = lastLessonName.LessonTitle,
-                LessonsNames = lessonsNames,
-                Email = user.Email,
-                ProfileUrl = profileUrl
-            };
+                if (string.IsNullOrEmpty(lastLessonName.LessonTitle)) // LessonTitle boş veya null ise
+                {
+                    System.Console.WriteLine("---------------------------------");
+                    System.Console.WriteLine("If içinde");
+                    System.Console.WriteLine("---------------------------------");
+                    lastLessonName.LessonTitle = "Eğitime Daha başlanmadı";
+                }
+                else
+                {
+                    //Burada normal akışta kod yaz yani eğitime başlamış ve nullreference hatası olmamış gibi
+                    var lessonsNames = _lessonRepository.GetAllLessons().Where(a => a.LevelId == user.LevelId).Select(l => l.LessonTitle).ToList();
 
-            // System.Console.WriteLine("1.parametre: " + userName);
-            // System.Console.WriteLine("2.parametre: " + lastLessonName.LessonTitle);
-            // System.Console.WriteLine("3.parametre: " + levelName);
-            // System.Console.WriteLine("4.parametre: " + lessonsNames.ElementAt(0));
-            return View(model);
+                    var model = new ProfileModel()
+                    {
+                        UserName = userName,
+                        LevelName = levelName,
+                        LastLessonName = lastLessonName.LessonTitle,
+                        LessonsNames = lessonsNames,
+                        Email = user.Email,
+                        ProfileUrl = profileUrl
+                    };
+                    return View(model);
+                }
+            }
+            else // lastLessonName null ise
+            {
+                //Burada ise null geliyor eğitim içeriği ona göre atama yap
+                System.Console.WriteLine("Profilinizi görüntüleyebilmeniz için öncelikle yeni kayıt olduğunu derse başlamanız gerekmektedir.");
+                var model = new ProfileModel()
+                {
+                    UserName = userName,
+                    LevelName = levelName,
+                    LastLessonName = "Yeni Eğitime Daha Başlanmadı",
+                    LessonsNames = new List<string>(){"Yeni Seviyedeki Eğitimlere Başlanmadı"},
+                    Email = user.Email,
+                    ProfileUrl = profileUrl
+                };
+                return View(model);
+            }
+
+            // var lessonsNames = _lessonRepository.GetAllLessons().Where(a => a.LevelId == user.LevelId).Select(l => l.LessonTitle).ToList();
+
+            // var model = new ProfileModel()
+            // {
+            //     UserName = userName,
+            //     LevelName = levelName,
+            //     LastLessonName = lastLessonName.LessonTitle,
+            //     LessonsNames = lessonsNames,
+            //     Email = user.Email,
+            //     ProfileUrl = profileUrl
+            // };
+
+            // // System.Console.WriteLine("1.parametre: " + userName);
+            // // System.Console.WriteLine("2.parametre: " + lastLessonName.LessonTitle);
+            // // System.Console.WriteLine("3.parametre: " + levelName);
+            // // System.Console.WriteLine("4.parametre: " + lessonsNames.ElementAt(0));
+            // return View(model);
+            return View();
         }
         public IActionResult AccessDenied()
         {
@@ -274,7 +316,7 @@ namespace learnenglish.webui.Controllers
                 user.UserName = model.UserName;
                 await _userManager.UpdateAsync(user);
 
-               
+
 
                 // if(model.ProfileUrl.CompareTo(user.ProfileUrl)!=0 && user.ProfileUrl==null){
                 //     user.ProfileUrl=model.ProfileUrl;
@@ -304,13 +346,13 @@ namespace learnenglish.webui.Controllers
                     System.Console.WriteLine("profileFile değiştirilmedi");
                     System.Console.WriteLine("-----------------------------");
                 }
-                 //Email Güncellemesi
+                //Email Güncellemesi
                 if (model.Email.CompareTo(user.Email) != 0)
                 {//Yani email değiştiyse
                     user.Email = model.Email;
                     user.EmailConfirmed = false;
                     await _userManager.UpdateAsync(user);
-                    
+
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     var url = Url.Action("ConfirmEmail", "Account", new
                     {
