@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L3qkEkvZv/70BHCvC5Uqd/xWadn6g2izGk1FWT6L8RtUYy6jnj480YEdH3Iv5vslONBIpkyxPod5LNlv7lKNoQ==",
+  "dgSpecHash": "BZy/Ed80wq8BSQQ9cklsZLE0tNDEfYCISPT8vkyrsTNdahdrcHyeM+haZkICMkFftC2RTYyKXwZ8mrgRNSIgcQ==",
   "success": true,
-  "projectFilePath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.data/learnenglish.data.csproj",
+  "projectFilePath": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.data/learnenglish.data.csproj",
   "expectedPackageFiles": [
     "/Users/osmanyildiz/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/osmanyildiz/.nuget/packages/microsoft.data.sqlite.core/7.0.9/microsoft.data.sqlite.core.7.0.9.nupkg.sha512",

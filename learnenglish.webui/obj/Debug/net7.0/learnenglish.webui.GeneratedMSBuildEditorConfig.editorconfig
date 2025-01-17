@@ -9,113 +9,113 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = learnenglish.webui
 build_property.RootNamespace = learnenglish.webui
-build_property.ProjectDir = /Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/
+build_property.ProjectDir = /Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui
+build_property.MSBuildProjectDirectory = /Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Account/AccessDenied.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9BY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Account/ConfirmEmail.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Db25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Account/ForgotPassword.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Gb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Account/Login.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Account/Profile.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Qcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Account/Register.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Account/ResetPassword.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Admin/CreateContent.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Admin/CreateContent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vQ3JlYXRlQ29udGVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Admin/CreateQuiz.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Admin/CreateQuiz.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vQ3JlYXRlUXVpei5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Admin/LessonEdit.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Admin/LessonEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vTGVzc29uRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Admin/LessonList.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Admin/LessonList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vTGVzc29uTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Admin/QuizEdit.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Admin/QuizEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUXVpekVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Admin/QuizList.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Admin/QuizList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUXVpekxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Admin/Showing.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Admin/Showing.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vU2hvd2luZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Admin/Statistics.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Admin/Statistics.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vU3RhdGlzdGljcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Home/Index.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Lesson/LessonContent.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Lesson/LessonContent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGVzc29uL0xlc3NvbkNvbnRlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Lesson/LevelInformation.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Lesson/LevelInformation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGVzc29uL0xldmVsSW5mb3JtYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Quiz/AfterQuiz.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Quiz/AfterQuiz.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVpei9BZnRlclF1aXouY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Quiz/BeforeQuiz.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Quiz/BeforeQuiz.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVpei9CZWZvcmVRdWl6LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Quiz/ShowQuiz.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Quiz/ShowQuiz.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVpei9TaG93UXVpei5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Shared/Components/Navbar/Default.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Shared/Components/Navbar/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvTmF2YmFyL0RlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Shared/_footer.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Shared/_footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19mb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/Shared/_Layout.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/_ViewImports.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/Views/_ViewStart.cshtml]
+[/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

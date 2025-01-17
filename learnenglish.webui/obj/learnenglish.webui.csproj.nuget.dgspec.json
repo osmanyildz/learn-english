@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/learnenglish.webui.csproj": {}
+    "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/learnenglish.webui.csproj": {}
   },
   "projects": {
-    "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.data/learnenglish.data.csproj": {
+    "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.data/learnenglish.data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.data/learnenglish.data.csproj",
+        "projectUniqueName": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.data/learnenglish.data.csproj",
         "projectName": "learnenglish.data",
-        "projectPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.data/learnenglish.data.csproj",
+        "projectPath": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.data/learnenglish.data.csproj",
         "packagesPath": "/Users/osmanyildiz/.nuget/packages/",
-        "outputPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.data/obj/",
+        "outputPath": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/osmanyildiz/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj": {
-                "projectPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj"
+              "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.entity/learnenglish.entity.csproj": {
+                "projectPath": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.entity/learnenglish.entity.csproj"
               }
             }
           }
@@ -73,14 +73,14 @@
         }
       }
     },
-    "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj": {
+    "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.entity/learnenglish.entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj",
+        "projectUniqueName": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.entity/learnenglish.entity.csproj",
         "projectName": "learnenglish.entity",
-        "projectPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj",
+        "projectPath": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.entity/learnenglish.entity.csproj",
         "packagesPath": "/Users/osmanyildiz/.nuget/packages/",
-        "outputPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/obj/",
+        "outputPath": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.entity/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/osmanyildiz/.nuget/NuGet/NuGet.Config"
@@ -126,14 +126,14 @@
         }
       }
     },
-    "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/learnenglish.webui.csproj": {
+    "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/learnenglish.webui.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/learnenglish.webui.csproj",
+        "projectUniqueName": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/learnenglish.webui.csproj",
         "projectName": "learnenglish.webui",
-        "projectPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/learnenglish.webui.csproj",
+        "projectPath": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/learnenglish.webui.csproj",
         "packagesPath": "/Users/osmanyildiz/.nuget/packages/",
-        "outputPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/obj/",
+        "outputPath": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/osmanyildiz/.nuget/NuGet/NuGet.Config"
@@ -149,11 +149,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.data/learnenglish.data.csproj": {
-                "projectPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.data/learnenglish.data.csproj"
+              "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.data/learnenglish.data.csproj": {
+                "projectPath": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.data/learnenglish.data.csproj"
               },
-              "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj": {
-                "projectPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj"
+              "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.entity/learnenglish.entity.csproj": {
+                "projectPath": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.entity/learnenglish.entity.csproj"
               }
             }
           }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj": {}
+    "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.entity/learnenglish.entity.csproj": {}
   },
   "projects": {
-    "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj": {
+    "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.entity/learnenglish.entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj",
+        "projectUniqueName": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.entity/learnenglish.entity.csproj",
         "projectName": "learnenglish.entity",
-        "projectPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/learnenglish.entity.csproj",
+        "projectPath": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.entity/learnenglish.entity.csproj",
         "packagesPath": "/Users/osmanyildiz/.nuget/packages/",
-        "outputPath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.entity/obj/",
+        "outputPath": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.entity/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/osmanyildiz/.nuget/NuGet/NuGet.Config"

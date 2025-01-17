@@ -85,10 +85,9 @@
     }
 </style>
 
+
 <div class="container">
     <div class="main-body">
-
-
         <form action="/Account/EditProfile" method="post" enctype="multipart/form-data">
 
             <div class="row gutters-sm">
@@ -97,17 +96,21 @@
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
                                 <div class="profil-resmi">
-                                    @if (@Model.ProfileUrl == null)
+                                   
+                                    @if (String.IsNullOrEmpty(Model.ProfileUrl))
                                     {
+
                                         <label for="fileInput">
                                             <div class="profil-resmi">
                                                 <img src="~/img/user2.png" class="rounded-circle" width="150">
+                                               
                                                 <div class="profil-degisim text-center">
                                                     <i class="fas fa-camera" style="width: 90px;"></i>Profili Değiştir
                                                 </div>
                                             </div>
                                         </label>
                                         <input type="file" id="fileInput" name="ProfileFile" style="display: none;">
+                                        
                                     }
                                     else
                                     {
@@ -153,6 +156,7 @@
                             <div class="row">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0 mt-2">Kullanıcı Adı</h6>
+
                                 </div>
                                 <div class="col-sm-9 text-secondary">
 

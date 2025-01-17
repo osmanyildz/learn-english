@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VRhpztLD47Ryw/DyC2/Bb0+AdMEIHL2KbjHm4SUq8hXDSm2TgHFoTtcPYrPRMysB+ZPpvFwB/6HlgXE800FZdA==",
+  "dgSpecHash": "POwd4QZBE8X5m8g5/ooT+87TyNOdfU2/xY0f54fT9WxN7osFkNZu6oul9LukxTwwe3zAoP2uRJ4wJgk7VI4e1Q==",
   "success": true,
-  "projectFilePath": "/Users/osmanyildiz/Desktop/learnenglish/learnenglish.webui/learnenglish.webui.csproj",
+  "projectFilePath": "/Users/osmanyildiz/Desktop/Dosyalar/learnenglish/learnenglish.webui/learnenglish.webui.csproj",
   "expectedPackageFiles": [
     "/Users/osmanyildiz/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/osmanyildiz/.nuget/packages/microsoft.aspnetcore.cryptography.internal/7.0.10/microsoft.aspnetcore.cryptography.internal.7.0.10.nupkg.sha512",
